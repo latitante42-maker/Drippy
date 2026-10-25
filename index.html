@@ -1,267 +1,123 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>DRIPPY ROMA - Official Club Experience</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Syne:wght@800&display=swap" rel="stylesheet">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DRIPPY - Gruppo PR Ufficiale</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Syne:wght@800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:'Outfit',sans-serif;background:#050000;color:#fff;overflow-x:hidden;min-height:100vh;-webkit-font-smoothing:antialiased}
-.bg{position:fixed;inset:0;z-index:-3;background:radial-gradient(120% 80% at 50% -10%, #FFD700 0%, #8B0000 25%, #1a0000 55%, #000 85%)}
-.bg::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 30%, rgba(255,215,0,.15), transparent 40%), radial-gradient(circle at 80% 70%, rgba(255,69,0,.12), transparent 40%);animation:floatBg 8s infinite alternate}
-@keyframes floatBg{from{transform:scale(1) translate(0,0)}to{transform:scale(1.1) translate(10px,-10px)}}
-.orb{position:fixed;border-radius:50%;filter:blur(40px);z-index:-2;opacity:.5;animation:orbFloat 12s infinite alternate}
-.orb1{width:300px;height:300px;background:radial-gradient(circle, #FFD700, transparent);top:-100px;left:-100px}
-.orb2{width:400px;height:400px;background:radial-gradient(circle, #8B0000, transparent);bottom:-100px;right:-100px;animation-delay:-6s}
-@keyframes orbFloat{from{transform:translate(0,0)}to{transform:translate(30px,-30px)}}
-.container{max-width:480px;margin:0 auto;padding:20px 16px 120px;position:relative;z-index:2}
-.glass{background:linear-gradient(180deg, rgba(255,215,0,.07), rgba(0,0,0,.55));backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,215,0,.18);border-radius:24px;box-shadow:0 20px 60px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.05)}
-/* HEADER */
-.header{display:flex;flex-direction:column;align-items:center;margin:10px 0 18px;position:relative}
-.logo-wrap{width:180px;height:180px;border-radius:50%;background:#000;border:2.5px solid #FFD700;box-shadow:0 0 50px rgba(255,215,0,.45), 0 0 100px rgba(139,0,0,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:.3s;position:relative;overflow:hidden}
-.logo-wrap:active{transform:scale(0.95)} .logo-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(255,255,255,.1), transparent);pointer-events:none}
-.live-badge{position:absolute;top:-6px;right:20px;background:#FF0000;color:#fff;font-size:9px;font-weight:800;padding:4px 8px;border-radius:100px;letter-spacing:1px;animation:pulseLive 1s infinite;box-shadow:0 0 10px #FF0000}
-@keyframes pulseLive{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
-.stats-row{display:flex;gap:8px;margin-top:14px;width:100%}
-.stat{flex:1;background:rgba(0,0,0,.4);border:1px solid rgba(255,215,0,.15);border-radius:14px;padding:10px;text-align:center}
-.stat b{font-size:16px;display:block;color:#FFD700}.stat span{font-size:9px;letter-spacing:1px;opacity:.7}
-/* APP GRID */
-.section-title{font-family:'Syne',sans-serif;font-size:13px;letter-spacing:3px;color:#FFD700;margin:22px 0 12px;opacity:.8}
-.app-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 10px}
-.app{display:flex;flex-direction:column;align-items:center;gap:7px;cursor:pointer;text-decoration:none;color:#fff;transition:transform .15s;transform-style:preserve-3d}
+body{font-family:'Outfit',sans-serif;background:#050000;color:#fff;overflow-x:hidden;min-height:100vh}
+.bg{position:fixed;inset:0;z-index:-3;background:radial-gradient(120% 80% at 50% -10%, #FFD700 0%, #8B0000 30%, #1a0000 60%, #000 85%)}
+.container{max-width:440px;margin:0 auto;padding:20px 16px 100px;position:relative;z-index:2}
+.glass{background:linear-gradient(180deg, rgba(255,215,0,.07), rgba(0,0,0,.55));backdrop-filter:blur(24px);border:1px solid rgba(255,215,0,.18);border-radius:24px}
+.header{display:flex;flex-direction:column;align-items:center;margin:14px 0 22px}
+.logo-circle{width:170px;height:170px;border-radius:50%;background:#000;border:2.5px solid #FFD700;box-shadow:0 0 45px rgba(255,215,0,.5);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.app-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 10px;margin-top:12px}
+.app{display:flex;flex-direction:column;align-items:center;gap:7px;cursor:pointer;text-decoration:none;color:#fff;transition:.15s}
 .app:active{transform:scale(0.88)}
-.app-icon{width:74px;height:74px;border-radius:20px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;box-shadow:0 10px 30px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.2);border:1.2px solid rgba(255,215,0,.25);position:relative;overflow:hidden;transition:transform .2s}
-.app-icon::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(255,255,255,.18), transparent 60%);pointer-events:none}
-.app-label{font-size:10px;font-weight:700;text-align:center;line-height:1.1;letter-spacing:.2px}
-.i1{background:linear-gradient(135deg,#FFD700,#FF8C00)}.i2{background:linear-gradient(135deg,#8B0000,#FFD700)}.i3{background:linear-gradient(135deg,#1a0000,#FF4500)}.i4{background:linear-gradient(135deg,#FFD700,#8B0000)}.i5{background:linear-gradient(135deg,#111,#FFD700)}.i6{background:linear-gradient(135deg,#FF8C00,#8B0000)}.i7{background:linear-gradient(135deg,#FFD700,#fff)}.i8{background:linear-gradient(135deg,#000,#FFD700)}
-/* VIBE */
-.vibe{display:flex;gap:8px;margin-top:10px}
-.vibe-btn{flex:1;padding:12px;border-radius:14px;background:rgba(255,215,0,.06);border:1px solid rgba(255,215,0,.15);color:#fff;font-weight:700;font-size:11px;cursor:pointer;transition:.2s}
-.vibe-btn.active{background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;border-color:#FFD700}
-/* CAROUSEL */
+.app-icon{width:74px;height:74px;border-radius:20px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;box-shadow:0 10px 25px rgba(0,0,0,.5);border:1.2px solid rgba(255,215,0,.25)}
+.app-label{font-size:10.5px;font-weight:700;text-align:center;line-height:1.1}
+.i1{background:linear-gradient(135deg,#FFD700,#FF8C00)}.i2{background:linear-gradient(135deg,#8B0000,#FFD700)}.i3{background:linear-gradient(135deg,#1a0000,#FF4500)}.i4{background:linear-gradient(135deg,#FFD700,#8B0000)}.i5{background:linear-gradient(135deg,#111,#FFD700)}.i6{background:linear-gradient(135deg,#FF8C00,#8B0000)}
+.pr-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-height:0;opacity:0;overflow:hidden;transition:all .5s}
+.pr-grid.open{max-height:600px;opacity:1;margin-top:12px}
+.pr-card{padding:12px;border-radius:16px;background:rgba(255,215,0,.05);border:1px solid rgba(255,215,0,.12);text-align:center;font-weight:700;font-size:12px;display:block;text-decoration:none;color:#fff}
+.btn{width:100%;display:flex;justify-content:center;align-items:center;background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;font-weight:900;padding:14px;border-radius:100px;border:none;cursor:pointer;margin-top:12px;box-shadow:0 10px 25px rgba(255,215,0,.3)}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.88);backdrop-filter:blur(18px);z-index:50;display:none;align-items:flex-end;justify-content:center}
+.modal.open{display:flex}.modal-box{background:linear-gradient(180deg,#1a0500,#000);border-top:1.5px solid rgba(255,215,0,.25);border-radius:28px 28px 0 0;padding:20px;width:100%;max-width:500px;max-height:92vh;overflow:auto}
+.input{width:100%;background:rgba(255,215,0,.06);border:1.5px solid rgba(255,215,0,.15);border-radius:12px;padding:12px;color:#fff;margin-top:6px;outline:none}
+.label{font-size:10px;color:#FFD700;margin-top:12px;display:block;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}
+.pr-select{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}
+.pr-opt{padding:11px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,215,0,.12);cursor:pointer;text-align:center;font-size:11px;font-weight:700}
+.pr-opt.active{background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;border-color:#FFD700}
 .carousel{display:flex;gap:10px;overflow-x:auto;padding:4px 2px 10px;scrollbar-width:none}
 .carousel::-webkit-scrollbar{display:none}
 .review{min-width:260px;padding:14px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,215,0,.1)}
-/* PR GRID */
-.pr-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-height:0;opacity:0;overflow:hidden;transition:all .5s cubic-bezier(.16,1,.3,1)}
-.pr-grid.open{max-height:600px;opacity:1;margin-top:12px}
-.pr-card{padding:12px;border-radius:16px;background:rgba(255,215,0,.05);border:1px solid rgba(255,215,0,.12);text-align:center;font-weight:700;font-size:12px;display:block;text-decoration:none;color:#fff;transition:.2s}
-.pr-card:active{transform:scale(0.95)}
-/* TICKET QR */
-.qr-box{width:100%;height:140px;background:repeating-linear-gradient(90deg, #fff 0 4px, #000 4px 8px);border-radius:12px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.qr-box::after{content:'DRIPPY OFFICIAL TICKET';position:absolute;background:#FFD700;color:#000;font-weight:900;font-size:10px;padding:4px 10px;letter-spacing:2px;transform:rotate(-5deg)}
-/* MODAL */
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.88);backdrop-filter:blur(18px);z-index:50;display:none;align-items:flex-end;justify-content:center;padding:0}
-.modal.open{display:flex}.modal-box{background:linear-gradient(180deg,#1a0500 0%, #000 100%);border-top:1.5px solid rgba(255,215,0,.25);border-radius:28px 28px 0 0;padding:20px;width:100%;max-width:500px;max-height:92vh;overflow:auto;animation:slideUp .4s cubic-bezier(.16,1,.3,1)}
-@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
-.input{width:100%;background:rgba(255,215,0,.06);border:1.5px solid rgba(255,215,0,.15);border-radius:12px;padding:12px 14px;color:#fff;margin-top:6px;font-family:inherit;outline:none;transition:.2s}
-.input:focus{border-color:#FFD700;background:rgba(255,215,0,.1)}
-.label{font-size:10px;color:#FFD700;margin-top:12px;display:block;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}
-.pr-select{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}
-.pr-opt{padding:11px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,215,0,.12);cursor:pointer;text-align:center;font-size:11px;font-weight:700;transition:.2s}
-.pr-opt.active{background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;border-color:#FFD700;transform:scale(1.03)}
-.btn{width:100%;display:flex;justify-content:center;align-items:center;gap:8px;background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;font-weight:900;padding:15px;border-radius:100px;text-decoration:none;margin-top:14px;border:none;cursor:pointer;font-size:14px;letter-spacing:.5px;box-shadow:0 10px 30px rgba(255,215,0,.3);transition:.2s}
-.btn:active{transform:scale(0.97)}
-/* LOADER DRIPPY */
-#loader{position:fixed;inset:0;z-index:9999;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .8s cubic-bezier(.16,1,.3,1)}
+#loader{position:fixed;inset:0;z-index:9999;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s}
 #loader.hidden{opacity:0;pointer-events:none}
-.drip-container{position:relative;display:flex;gap:2px;font-family:'Syne',sans-serif;font-size:56px;font-weight:900;letter-spacing:4px;color:#FFD700;line-height:1}
-.drip-letter{position:relative;display:inline-block;animation:dripWobble 2s infinite ease-in-out}
-.drip-letter::after{content:'';position:absolute;left:50%;top:95%;width:4px;height:0;background:linear-gradient(to bottom, #FFD700, #FF8C00, transparent);border-radius:100px;transform:translateX(-50%);animation:dripFall var(--dur) infinite linear;animation-delay:var(--delay)}
-@keyframes dripWobble{0%,100%{transform:translateY(0) scaleY(1)}20%{transform:translateY(2px) scaleY(1.05)}40%{transform:translateY(-1px) scaleY(0.98)}}
-@keyframes dripFall{0%{height:0;opacity:1;transform:translateX(-50%) translateY(0)}50%{height:18px;opacity:1}100%{height:30px;opacity:0;transform:translateX(-50%) translateY(60px)}}
-.loader-bar{width:260px;height:6px;background:rgba(255,215,0,.08);border-radius:100px;margin-top:40px;overflow:hidden;border:1px solid rgba(255,215,0,.1)}
-.loader-fill{height:100%;width:0%;background:linear-gradient(90deg,#FFD700,#FF8C00,#FFD700);background-size:200% 100%;border-radius:100px;animation:shimmer 1s infinite linear;transition:width .15s linear}
-@keyframes shimmer{from{background-position:0%}to{background-position:200%}}
-.loader-percent{margin-top:12px;font-size:12px;color:#FFD700;font-weight:800;letter-spacing:3px}
-.drops{position:absolute;inset:0;pointer-events:none;overflow:hidden}
-.drop{position:absolute;width:6px;height:10px;background:linear-gradient(#FFD700,#FF8C00);border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;animation:dropFall linear forwards}
-@keyframes dropFall{from{transform:translateY(-20px)}to{transform:translateY(110vh)}}
+.loader-logo{width:190px;height:190px;border-radius:50%;background:#000;border:2px solid #FFD700;box-shadow:0 0 45px rgba(255,215,0,.5);display:flex;flex-direction:column;align-items:center;justify-content:center;animation:pulse 1s infinite alternate}
+@keyframes pulse{from{transform:scale(1)}to{transform:scale(1.05)}}
+.loader-bar{width:220px;height:6px;background:rgba(255,215,0,.1);border-radius:100px;margin-top:22px;overflow:hidden}
+.loader-fill{height:100%;width:0%;background:linear-gradient(90deg,#FFD700,#FF8C00);border-radius:100px;transition:width .1s}
+.loader-percent{margin-top:10px;font-size:11px;color:#FFD700;font-weight:800;letter-spacing:2px}
+.drip-container{display:flex;gap:2px;font-family:'Syne',sans-serif;font-size:52px;font-weight:900;letter-spacing:3px;color:#FFD700}
+.drip-letter{position:relative;display:inline-block;animation:wobble 2s infinite}
+.drip-letter::after{content:'';position:absolute;left:50%;top:92%;width:3px;height:0;background:linear-gradient(#FFD700,#FF8C00,transparent);border-radius:100px;transform:translateX(-50%);animation:drip var(--dur) infinite linear;animation-delay:var(--delay)}
+@keyframes wobble{0%,100%{transform:translateY(0)}30%{transform:translateY(3px) scaleY(1.05)}}
+@keyframes drip{0%{height:0;opacity:1}50%{height:14px;opacity:1}100%{height:24px;opacity:0;transform:translateX(-50%) translateY(40px)}}
 </style>
 </head>
 <body>
 <div id="loader">
-<div class="drops" id="drops"></div>
-<div class="drip-container" id="dripText">
-<span class="drip-letter" style="--delay:.1s;--dur:1.2s">D</span>
-<span class="drip-letter" style="--delay:.3s;--dur:1.4s">R</span>
-<span class="drip-letter" style="--delay:.2s;--dur:1.1s">I</span>
-<span class="drip-letter" style="--delay:.5s;--dur:1.6s">P</span>
-<span class="drip-letter" style="--delay:.15s;--dur:1.3s">P</span>
-<span class="drip-letter" style="--delay:.4s;--dur:1.5s">Y</span>
+<div class="drip-container"><span class="drip-letter" style="--delay:.1s;--dur:1.2s">D</span><span class="drip-letter" style="--delay:.2s;--dur:1.3s">R</span><span class="drip-letter" style="--delay:.15s;--dur:1.1s">I</span><span class="drip-letter" style="--delay:.3s;--dur:1.4s">P</span><span class="drip-letter" style="--delay:.1s;--dur:1.2s">P</span><span class="drip-letter" style="--delay:.25s;--dur:1.3s">Y</span></div>
+<div class="loader-logo" style="margin-top:18px">
+<svg viewBox="0 0 100 70" width="95" height="55" fill="none" stroke="#FFD700" stroke-width="1.6" stroke-linecap="round"><path d="M5 55 L5 20 Q20 10 50 8 Q80 10 95 20 L95 55 Q80 60 50 62 Q20 60 5 55 Z"/><path d="M5 35 Q20 28 50 26 Q80 28 95 35"/><path d="M10 25 L10 52 M20 22 L20 54 M30 20 L30 55 M40 19 L40 56 M50 18 L50 57 M60 19 L60 56 M70 20 L70 55 M80 22 L80 54 M90 25 L90 52"/></svg>
+<span style="font-size:11px;font-weight:900;color:#FFD700;letter-spacing:3px;margin-top:4px">DRIPPY</span>
 </div>
-<div style="display:flex;flex-direction:column;align-items:center;margin-top:18px">
-<svg viewBox="0 0 100 70" width="90" height="50" fill="none" stroke="#FFD700" stroke-width="1.5" stroke-linecap="round"><path d="M8 55 L8 22 Q22 10 50 8 Q78 10 92 22 L92 55 Q78 60 50 62 Q22 60 8 55 Z"/><path d="M8 35 Q22 27 50 25 Q78 27 92 35"/><path d="M12 25 L12 52 M22 22 L22 54 M33 20 L33 55 M44 19 L44 56 M55 18 L55 57 M66 19 L66 56 M77 22 L77 54 M88 25 L88 52"/></svg>
-<span style="font-size:9px;letter-spacing:4px;color:#FF8C00;margin-top:6px">ROMA • COLOSSEO</span>
+<div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div><div class="loader-percent" id="loaderPercent">0% • CARICAMENTO</div>
 </div>
-<div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
-<div class="loader-percent" id="loaderPercent">0% • CARICAMENTO DRIPPY</div>
-</div>
-
 <div class="bg"></div>
-<div class="orb orb1"></div><div class="orb orb2"></div>
-
 <main class="container">
 <div class="header">
-<div class="logo-wrap" id="logoEaster">
-<span class="live-badge">● LIVE</span>
-<svg viewBox="0 0 100 80" width="110" height="80" fill="none" stroke="#FFD700" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 58 L8 24 Q22 12 50 10 Q78 12 92 24 L92 58 Q78 64 50 66 Q22 64 8 58 Z"/><path d="M8 38 Q22 30 50 28 Q78 30 92 38"/><path d="M12 27 L12 56 M22 24 L22 58 M33 22 L33 60 M44 21 L44 61 M55 20 L55 62 M66 21 L66 61 M77 24 L77 58 M88 27 L88 56"/><path d="M14 56 Q17 44 21 44 Q25 44 28 56 M32 56 Q35 42 40 42 Q45 42 48 56 M52 56 Q55 42 60 42 Q65 42 68 56 M72 56 Q75 44 79 44 Q83 44 86 56"/></svg>
-<span style="font-size:13px;font-weight:900;color:#FFD700;letter-spacing:4px;margin-top:6px">DRIPPY</span>
-<span style="font-size:7px;color:#FF8C00;letter-spacing:2px">COLOSSEO • ROMA</span>
+<div class="logo-circle">
+<svg viewBox="0 0 100 80" width="110" height="75" fill="none" stroke="#FFD700" stroke-width="1.8" stroke-linecap="round"><path d="M8 58 L8 24 Q22 12 50 10 Q78 12 92 24 L92 58 Q78 64 50 66 Q22 64 8 58 Z"/><path d="M8 38 Q22 30 50 28 Q78 30 92 38"/><path d="M12 27 L12 56 M22 24 L22 58 M33 22 L33 60 M44 21 L44 61 M55 20 L55 62 M66 21 L66 61 M77 24 L77 58 M88 27 L88 56"/></svg>
+<span style="font-size:12px;font-weight:900;color:#FFD700;letter-spacing:4px;margin-top:6px">DRIPPY</span>
+<span style="font-size:7px;color:#FF8C00;letter-spacing:2px;margin-top:2px">GRUPPO PR • SIMBOLO</span>
 </div>
-<h1 style="font-family:'Syne',sans-serif;font-size:24px;font-weight:800;margin-top:14px;text-align:center;letter-spacing:1px">CREATORE E GESTORE<br><span style="background:linear-gradient(90deg,#FFD700,#FF8C00);-webkit-background-clip:text;-webkit-text-fill-color:transparent">DRIPPY</span></h1>
-<div class="stats-row">
-<div class="stat"><b id="onlineCount">127</b><span>ONLINE ORA</span></div>
-<div class="stat"><b id="countdown">3G 14H</b><span>PROSSIMA SERATA</span></div>
-<div class="stat"><b>4.9★</b><span>200+ REVIEW</span></div>
+<h1 style="font-family:'Syne';font-size:22px;font-weight:800;margin-top:14px;text-align:center">GRUPPO PR UFFICIALE<br><span style="background:linear-gradient(90deg,#FFD700,#FF8C00);-webkit-background-clip:text;-webkit-text-fill-color:transparent">VENDITA PREVENDITE</span></h1>
+<p style="font-size:11px;opacity:.6;margin-top:6px;letter-spacing:2px">LISTE • TAVOLI • PISTA • ROMA</p>
 </div>
-</div>
-
-<div class="section-title">APPLICAZIONI DRIPPY • CLICCA</div>
+<div style="font-size:11px;letter-spacing:2px;color:#FFD700;margin:18px 0 10px;opacity:.7">APPLICAZIONI • CLICCA PER APRIRE</div>
 <div class="app-grid">
-<a class="app" href="https://wa.me/393515435403?text=Ciao%20William%20dal%20sito%20Drippy"><div class="app-icon i2" data-tilt>W</div><span class="app-label">William<br>Owner</span></a>
-<div class="app" id="openPR"><div class="app-icon i1" data-tilt>PR</div><span class="app-label">Contatta<br>PR</span></div>
-<div class="app" id="openTicket"><div class="app-icon i3" data-tilt>🎟️</div><span class="app-label">Ticket<br>Prevendite</span></div>
-<a class="app" href="https://wa.me/393515435403?text=Voglio%20lavorare%20come%20PR"><div class="app-icon i4" data-tilt>💼</div><span class="app-label">Lavora<br>PR</span></a>
-<div class="app" id="scrollRicon"><div class="app-icon i5" data-tilt>🏆</div><span class="app-label">Riconos<br>cimenti</span></div>
-<a class="app" href="https://wa.me/393926816361?text=Ciao%20Carmine%20sono%20dal%20sito%20Drippy"><div class="app-icon i6" data-tilt>C</div><span class="app-label">Carmine<br>Dev & Staff</span></a>
-<div class="app" id="openMap"><div class="app-icon i7" data-tilt>📍</div><span class="app-label">Mappa<br>Club</span></div>
-<div class="app" id="openVibe"><div class="app-icon i8" data-tilt>✨</div><span class="app-label">Vibe<br>Check</span></div>
-<div class="app" id="openQR"><div class="app-icon i1" data-tilt>QR</div><span class="app-label">Il Mio<br>Ticket</span></div>
+<a class="app" href="https://wa.me/393515435403?text=Ciao%20William%20dal%20sito%20Drippy"><div class="app-icon i2">W</div><span class="app-label">William<br>Owner</span></a>
+<div class="app" id="openPR"><div class="app-icon i1">PR</div><span class="app-label">Contatta<br>PR</span></div>
+<div class="app" id="openTicket"><div class="app-icon i3">🎟️</div><span class="app-label">Ticket<br>Prevendite</span></div>
+<a class="app" href="https://wa.me/393515435403?text=Voglio%20lavorare%20come%20PR%20Drippy"><div class="app-icon i4">💼</div><span class="app-label">Lavora<br>con Noi</span></a>
+<div class="app" id="scrollRicon"><div class="app-icon i5">🏆</div><span class="app-label">Chi<br>Siamo</span></div>
+<a class="app" href="https://wa.me/393926816361?text=Ciao%20Carmine%20dal%20sito%20Drippy"><div class="app-icon i6">C</div><span class="app-label">Carmine<br>Dev & PR</span></a>
 </div>
-
-<div class="glass" style="padding:16px;margin-top:18px">
-<div style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:13px">Contatta Il PR • Scegli</b><span style="color:#FFD700;font-size:12px">▼</span></div>
+<div class="glass" style="padding:14px;margin-top:16px">
+<div style="display:flex;justify-content:space-between"><b style="font-size:13px">Contatta Il PR</b><span style="color:#FFD700">▼</span></div>
 <div class="pr-grid" id="prGrid">
-<a class="pr-card" href="https://www.instagram.com/valeriol_5" target="_blank">Innocenti<br><small style="opacity:.6">PR</small></a>
-<a class="pr-card" href="https://www.instagram.com/fastlife_17_" target="_blank">Michael<br><small style="opacity:.6">PR</small></a>
-<a class="pr-card" href="https://www.instagram.com/____valeriooo____" target="_blank">Valerio<br><small style="opacity:.6">PR</small></a>
-<a class="pr-card" href="https://www.instagram.com/eeleonora._______" target="_blank">Eleonora<br><small style="color:#FFD700">Founder & PR Ufficiale</small></a>
-<a class="pr-card" style="grid-column:1/-1;border:1.6px solid #FFD700;background:linear-gradient(135deg,rgba(255,215,0,.18),rgba(139,0,0,.12))" href="https://wa.me/393926816361?text=Ciao%20Carmine%20dal%20sito%20Drippy">Carmine<br><small>Creatore Sito, Developer, PR Ufficiale & Staff Drippy</small></a>
+<a class="pr-card" href="https://www.instagram.com/valeriol_5" target="_blank">Innocenti</a>
+<a class="pr-card" href="https://www.instagram.com/fastlife_17_" target="_blank">Michael</a>
+<a class="pr-card" href="https://www.instagram.com/____valeriooo____" target="_blank">Valerio</a>
+<a class="pr-card" href="https://www.instagram.com/eeleonora._______" target="_blank">Eleonora<br><small style="color:#FFD700">Founder, Amministratrice & PR</small></a>
+<a class="pr-card" style="grid-column:1/-1;border:1.5px solid #FFD700;background:linear-gradient(135deg,rgba(255,215,0,.15),rgba(139,0,0,.1))" href="https://wa.me/393926816361?text=Ciao%20Carmine">Carmine<br><small>Creatore Sito, Developer, PR Ufficiale & Staff</small></a>
 </div>
 </div>
-
-<div class="glass" id="vibeSection" style="padding:16px;margin-top:14px;display:none">
-<b style="font-size:13px">✨ Vibe Check • Che serata vuoi?</b>
-<div class="vibe"><button class="vibe-btn" data-vibe="chill">Chill</button><button class="vibe-btn" data-vibe="hype">Hype 100%</button><button class="vibe-btn" data-vibe="vip">VIP</button></div>
-<p id="vibeResult" style="font-size:12px;color:#FFD700;margin-top:10px;line-height:1.4"></p>
-</div>
-
-<div class="glass" id="mapSection" style="padding:16px;margin-top:14px;display:none">
-<b style="font-size:13px">📍 Drippy Radar • Roma</b>
-<div style="margin-top:12px;height:140px;border-radius:16px;background:radial-gradient(circle at 50% 50%, rgba(255,215,0,.15), #000);border:1px solid rgba(255,215,0,.15);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center">
-<div style="position:absolute;width:20px;height:20px;background:#FFD700;border-radius:50%;box-shadow:0 0 20px #FFD700;animation:pulseLive 1s infinite"></div>
-<div style="position:absolute;width:60px;height:60px;border:1px solid #FFD700;border-radius:50%;opacity:.3;animation:pulseLive 2s infinite"></div>
-<span style="position:absolute;bottom:8px;font-size:9px;letter-spacing:2px;color:#FFD700">COLOSSEO • ZONA DRIPPY • 0.3KM</span>
-</div>
-</div>
-
-<div class="section-title">COSA DICONO DI NOI</div>
-<div class="carousel" id="reviews">
+<div style="font-size:11px;letter-spacing:2px;color:#FFD700;margin:20px 0 10px;opacity:.7">COSA DICONO DI NOI</div>
+<div class="carousel">
 <div class="review"><b style="color:#FFD700">★ ★ ★ ★ ★</b><p style="font-size:12px;margin-top:6px">Serata assurda, lista veloce, William top. Mai visto hype così a Roma.</p><small style="opacity:.5">— Giulia, 22</small></div>
 <div class="review"><b style="color:#FFD700">★ ★ ★ ★ ★</b><p style="font-size:12px;margin-top:6px">Eleonora mi ha fatto entrare subito, gruppo organizzatissimo.</p><small style="opacity:.5">— Martina, 21</small></div>
 <div class="review"><b style="color:#FFD700">★ ★ ★ ★ ★</b><p style="font-size:12px;margin-top:6px">Sito fatto da Carmine spaziale, prevendita in 2 sec su WhatsApp.</p><small style="opacity:.5">— Luca, 23</small></div>
 </div>
-
-<div id="riconoscimenti" class="glass" style="padding:16px;margin-top:16px">
-<h2 style="font-size:14px;letter-spacing:1px">🏆 RICONOSCIMENTI • STAFF UFFICIALE</h2>
-<div style="margin-top:12px;padding:14px;border-radius:18px;background:linear-gradient(135deg, rgba(255,215,0,.08), rgba(0,0,0,.3));border:1px solid rgba(255,215,0,.18)"><b style="font-size:13px">William | Creatore di Drippy • Owner</b><p style="font-size:12px;color:#FFD700;margin-top:7px;line-height:1.5">William è il fondatore e l'anima di Drippy. Ha creato il brand dal nulla, da feste private a sold-out nelle location più esclusive di Roma. Gestisce location, booking artisti, scenografia, luci, suoni, coordinamento PR. Decenni di esperienza nella nightlife romana. Sempre presente in serata, sempre sul pezzo. Se vuoi il top dell'hype romano, c'è solo William. Ogni evento nasce dalla sua visione e ossessione per la perfezione.</p></div>
-<div style="margin-top:10px;padding:14px;border-radius:18px;background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.18)"><b style="font-size:13px">Eleonora | Founder, Amministratrice del gruppo & PR ufficiale</b><p style="font-size:12px;color:#dcfce7;margin-top:7px;line-height:1.5">Eleonora è il cuore della community Drippy. Gestisce il gruppo WhatsApp con centinaia di ragazze, mantiene ordine, hype e vibes positive. Accoglienza, liste, tavoli, coordinamento, supporto a tutte le nuove entrate. PR richiestissima, sorridente, disponibile h24, punto di riferimento femminile. Senza di lei Drippy non avrebbe lo stesso spirito familiare e professionale che lo rende unico a Roma.</p></div>
-<div style="margin-top:10px;padding:14px;border-radius:18px;background:linear-gradient(135deg, rgba(255,215,0,.1), rgba(255,140,0,.05));border:1.5px solid rgba(255,215,0,.25)"><b style="font-size:13px">Carmine | Creatore Sito, Developer, PR Ufficiale & Staff Drippy</b><p style="font-size:12px;color:#FFD700;margin-top:7px;line-height:1.5">Carmine è la mente tecnologica dietro Drippy. Ha progettato e sviluppato da zero questo sito ufficiale: design app-style, sistema prevendite con selezione PR, integrazione WhatsApp, loader con scritta che cola con gocce animate, barra 0-100%, effetti 3D, vibe check, radar mappa, background animato, easter egg. Oltre al codice è PR attivo e Staff operativo in serata: accoglienza, ingressi, supporto luci e social. Unisce il mondo digitale e la notte romana. Disponibile 24/7, membro chiave insostituibile che ha trasformato Drippy da gruppo WhatsApp a brand digitale professionale.</p></div>
+<div id="riconoscimenti" class="glass" style="padding:14px;margin-top:16px">
+<h2 style="font-size:13px;letter-spacing:1px">🏆 CHI SIAMO • GRUPPO PR</h2>
+<div style="margin-top:10px;padding:12px;border-radius:16px;background:rgba(255,215,0,.06);border:1px solid rgba(255,215,0,.15)"><b style="font-size:13px">William | Fondatore Gruppo PR</b><p style="font-size:12px;color:#FFD700;margin-top:6px;line-height:1.4">William ha fondato Drippy come gruppo PR per la vendita di prevendite a Roma. Gestisce contatti con le discoteche, organizza le liste, coordina il team di PR e assicura l'ingresso ai nostri clienti. Non siamo una discoteca, siamo il ponte tra voi e la serata. La sua esperienza e i suoi contatti garantiscono prevendite sicure e veloci.</p></div>
+<div style="margin-top:8px;padding:12px;border-radius:16px;background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.18)"><b style="font-size:13px">Eleonora | Founder, Amministratrice & PR Ufficiale</b><p style="font-size:12px;color:#dcfce7;margin-top:6px;line-height:1.4">Eleonora è il cuore del gruppo PR Drippy. Gestisce il gruppo WhatsApp ufficiale con centinaia di membri, mantiene ordine e hype, accoglie le nuove ragazze, gestisce le liste per le prevendite, coordina gli ingressi con i PR. PR ufficiale richiestissima, disponibile h24. Senza di lei il gruppo non avrebbe la stessa organizzazione.</p></div>
+<div style="margin-top:8px;padding:12px;border-radius:16px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.25)"><b style="font-size:13px">Carmine | Creatore Sito, Developer, PR Ufficiale & Staff</b><p style="font-size:12px;color:#FFD700;margin-top:6px;line-height:1.4">Carmine ha creato da zero questo sito per il gruppo PR Drippy: design app-style, sistema di acquisto prevendite con scelta del PR di fiducia, collegamento diretto WhatsApp, loader con scritta DRIPPY che cola. Oltre a essere developer, è PR ufficiale attivo che vende prevendite e fa parte dello Staff che gestisce le liste all'ingresso.</p></div>
 </div>
-
-<div style="text-align:center;margin-top:30px;opacity:.4;font-size:10px;letter-spacing:3px">DRIPPY ROMA • DAL 2023 • COLOSSEO • MADE BY CARMINE</div>
+<div style="text-align:center;margin-top:24px;opacity:.35;font-size:9px;letter-spacing:2px">DRIPPY • GRUPPO PR • PREVENDITE • MADE BY CARMINE</div>
 </main>
-
 <div class="modal" id="ticketModal"><div class="modal-box">
-<div style="display:flex;justify-content:space-between;align-items:center"><h2 style="font-family:'Syne'">🎟️ ACQUISTA PREVENDITA</h2><button id="closeTicket" style="background:rgba(255,215,0,.1);border:none;color:#FFD700;width:34px;height:34px;border-radius:50%;font-size:16px">✕</button></div>
-<label class="label">Nome e Cognome</label><input class="input" id="fNome" placeholder="Mario Rossi">
+<div style="display:flex;justify-content:space-between"><h2 style="font-family:'Syne';font-size:18px">🎟️ ACQUISTA PREVENDITA</h2><button id="closeTicket" style="background:rgba(255,215,0,.1);border:none;color:#FFD700;width:32px;height:32px;border-radius:50%">✕</button></div>
+<label class="label">Nome</label><input class="input" id="fNome" placeholder="Mario Rossi">
 <label class="label">Data di nascita</label><input class="input" id="fNascita" type="date">
-<label class="label">Quante prevendite</label><input class="input" id="fQta" type="number" value="1" min="1" max="10">
-<label class="label">Tavolo o Pista</label><select class="input" id="fTipo"><option value="pista">Pista - Hype 100%</option><option value="tavolo">Tavolo - VIP</option></select>
-<label class="label">Scegli il tuo PR di fiducia</label><div class="pr-select"><div class="pr-opt" data-pr="Innocenti" data-wa="393515435403">Innocenti</div><div class="pr-opt" data-pr="Michael" data-wa="393515435403">Michael</div><div class="pr-opt" data-pr="Valerio" data-wa="393515435403">Valerio</div><div class="pr-opt" data-pr="Eleonora - Founder & PR" data-wa="393515435403">Eleonora</div><div class="pr-opt" data-pr="Carmine - Creatore Sito, Developer, PR & Staff" data-wa="393926816361">Carmine ⭐</div><div class="pr-opt" data-pr="William - Owner" data-wa="393515435403">William</div></div>
-<label class="label">Telefono o Instagram</label><input class="input" id="fContatto" placeholder="3xx xxxxxxx o @instagram">
-<div style="margin-top:14px;padding:14px;border-radius:16px;background:rgba(255,215,0,.08);border:1px dashed rgba(255,215,0,.25);display:flex;justify-content:space-between;align-items:center"><div><b style="font-size:12px">Prezzo TOT:</b><br><small style="color:#FFD700;font-size:10px">Te lo dice il PR su WhatsApp</small></div><div id="priceTot" style="font-weight:900;color:#FFD700">DA CONCORDARE</div></div>
-<button class="btn" id="sendTicket">📩 INVIA AL PR SU WHATSAPP →</button>
-<p style="font-size:9px;opacity:.5;text-align:center;margin-top:10px">Prevendita ufficiale Drippy • Risposta in < 5 min</p>
+<label class="label">Quante prevendite</label><input class="input" id="fQta" type="number" value="1" min="1">
+<label class="label">Tavolo o Pista</label><select class="input" id="fTipo"><option value="pista">Pista</option><option value="tavolo">Tavolo</option></select>
+<label class="label">Scegli il tuo PR di fiducia</label><div class="pr-select"><div class="pr-opt" data-pr="Innocenti" data-wa="393515435403">Innocenti</div><div class="pr-opt" data-pr="Michael" data-wa="393515435403">Michael</div><div class="pr-opt" data-pr="Valerio" data-wa="393515435403">Valerio</div><div class="pr-opt" data-pr="Eleonora" data-wa="393515435403">Eleonora</div><div class="pr-opt" data-pr="Carmine" data-wa="393926816361">Carmine ⭐</div><div class="pr-opt" data-pr="William" data-wa="393515435403">William</div></div>
+<label class="label">Telefono o Instagram</label><input class="input" id="fContatto" placeholder="3xx o @ig">
+<button class="btn" id="sendTicket">📩 INVIA AL PR SU WHATSAPP</button>
 </div></div>
-
-<div class="modal" id="qrModal"><div class="modal-box">
-<div style="display:flex;justify-content:space-between"><h2>🎫 IL MIO TICKET</h2><button id="closeQR" style="background:rgba(255,215,0,.1);border:none;color:#FFD700;width:32px;height:32px;border-radius:50%">✕</button></div>
-<div class="qr-box" style="margin-top:16px"></div>
-<p style="font-size:11px;text-align:center;margin-top:12px;color:#FFD700">Mostra questo QR all'ingresso • Valido per Drippy Roma<br><small style="opacity:.6">ID: DRIPPY-ROMA-COLOSSEO-2026</small></p>
-<a class="btn" href="https://wa.me/393515435403?text=Ho%20il%20mio%20QR%20Drippy">Verifica con William</a>
-</div></div>
-
 <script>
-// LOADER DRIPPY COLA
-(function(){
-const fill=document.getElementById('loaderFill'), perc=document.getElementById('loaderPercent'), loader=document.getElementById('loader'), drops=document.getElementById('drops');
-let p=0;
-function createDrop(){
-const d=document.createElement('div');d.className='drop';
-d.style.left=Math.random()*100+'%';d.style.animationDuration=(1+Math.random()*1.5)+'s';d.style.animationDelay=Math.random()*.5+'s';
-drops.appendChild(d);setTimeout(()=>d.remove(),2000);
-}
-let dropInterval=setInterval(createDrop,80);
-let t=setInterval(()=>{
-p+=0.9+Math.random()*0.8;if(p>100)p=100;
-fill.style.width=p+'%';perc.textContent=Math.floor(p)+'% • CARICAMENTO DRIPPY';
-if(p>=100){clearInterval(t);clearInterval(dropInterval);setTimeout(()=>loader.classList.add('hidden'),700)}
-},90);
-})();
-// STATS LIVE
-let online=127;setInterval(()=>{online+=Math.floor(Math.random()*3)-1;document.getElementById('onlineCount').textContent=online},3000);
-// TILT EFFECT
-document.querySelectorAll('[data-tilt]').forEach(el=>{
-el.addEventListener('touchmove',e=>{
-const rect=el.getBoundingClientRect();const x=e.touches[0].clientX-rect.left-rect.width/2;const y=e.touches[0].clientY-rect.top-rect.height/2;
-el.style.transform=`perspective(400px) rotateY(${x/8}deg) rotateX(${-y/8}deg) scale(1.05)`;
-});el.addEventListener('touchend',()=>el.style.transform='');
-});
-// MODALS
-const ticketModal=document.getElementById('ticketModal'), qrModal=document.getElementById('qrModal');
-document.getElementById('openTicket').addEventListener('click',()=>ticketModal.classList.add('open'));
-document.getElementById('closeTicket').addEventListener('click',()=>ticketModal.classList.remove('open'));
-document.getElementById('openQR').addEventListener('click',()=>qrModal.classList.add('open'));
-document.getElementById('closeQR').addEventListener('click',()=>qrModal.classList.remove('open'));
-ticketModal.addEventListener('click',e=>{if(e.target===ticketModal)ticketModal.classList.remove('open')});
-qrModal.addEventListener('click',e=>{if(e.target===qrModal)qrModal.classList.remove('open')});
-// PR TOGGLE
-const prGrid=document.getElementById('prGrid');
-document.getElementById('openPR').addEventListener('click',()=>prGrid.classList.toggle('open'));
-// MAP & VIBE
-document.getElementById('openMap').addEventListener('click',()=>{document.getElementById('mapSection').style.display=document.getElementById('mapSection').style.display==='none'?'block':'none';document.getElementById('mapSection').scrollIntoView({behavior:'smooth'})});
-document.getElementById('openVibe').addEventListener('click',()=>{document.getElementById('vibeSection').style.display=document.getElementById('vibeSection').style.display==='none'?'block':'none'});
-document.getElementById('scrollRicon').addEventListener('click',()=>document.getElementById('riconoscimenti').scrollIntoView({behavior:'smooth'}));
-document.querySelectorAll('.vibe-btn').forEach(b=>{
-b.addEventListener('click',()=>{
-document.querySelectorAll('.vibe-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');
-const res=document.getElementById('vibeResult');
-if(b.dataset.vibe==='chill')res.textContent='Perfetto per te: Pista + drink tranquillo. Chiedi a Eleonora, ti mette in lista chill.';
-if(b.dataset.vibe==='hype')res.textContent='Hype 100%: Pista fronte console, entra presto. Chiedi a William o Innocenti, è serata fuoco.';
-if(b.dataset.vibe==='vip')res.textContent='VIP Mode: Tavolo con bottiglia, vista Colosseo vibe. Contatta Michael o Carmine per tavolo.';
-});
-});
-// PR SELECT + SEND
-let sPR=null,sWA=null;
-document.querySelectorAll('.pr-opt').forEach(o=>{
-o.addEventListener('click',()=>{
-document.querySelectorAll('.pr-opt').forEach(x=>x.classList.remove('active'));o.classList.add('active');sPR=o.dataset.pr;sWA=o.dataset.wa;
-document.getElementById('priceTot').textContent='Chiedi a '+sPR;
-});
-});
-document.getElementById('sendTicket').addEventListener('click',()=>{
-const n=document.getElementById('fNome').value.trim(),d=document.getElementById('fNascita').value,q=document.getElementById('fQta').value,t=document.getElementById('fTipo').value,c=document.getElementById('fContatto').value.trim();
-if(!n||!d||!q||!sPR||!c){alert('Compila tutto e scegli un PR');return}
-const msg=`Ciao ${sPR}! Vengo dal sito ufficiale DRIPPY ROMA 🟡%0A%0A🎟️ RICHIESTA PREVENDITA%0ANome: ${n}%0AData nascita: ${d}%0AQta: ${q}%0ATipo: ${t}%0APR scelto: ${sPR}%0AContatto: ${c}%0A%0AColosseo • Roma • Drippy`;
-window.open('https://wa.me/'+sWA+'?text='+msg,'_blank');
-});
-// EASTER EGG COLOSSEO
-let clicks=0;document.getElementById('logoEaster').addEventListener('click',()=>{
-clicks++;if(clicks===5){alert('🏛️ HAI SBLOCCATO IL DRIPPY SEGRETO! Scrivi a William: COLOSSEO DRIPPY per tavolo omaggio shot.');clicks=0}
-setTimeout(()=>clicks=0,3000);
-});
+(function(){var fill=document.getElementById('loaderFill'),perc=document.getElementById('loaderPercent'),loader=document.getElementById('loader');var p=0;var t=setInterval(function(){p+=1.1;if(p>100)p=100;fill.style.width=p+'%';perc.textContent=Math.floor(p)+'%';if(p>=100){clearInterval(t);setTimeout(function(){loader.classList.add('hidden')},600)}},90)})();
+document.getElementById('openPR').addEventListener('click',function(){document.getElementById('prGrid').classList.toggle('open')});
+document.getElementById('openTicket').addEventListener('click',function(){document.getElementById('ticketModal').classList.add('open')});
+document.getElementById('closeTicket').addEventListener('click',function(){document.getElementById('ticketModal').classList.remove('open')});
+document.getElementById('ticketModal').addEventListener('click',function(e){if(e.target.id==='ticketModal')e.currentTarget.classList.remove('open')});
+document.getElementById('scrollRicon').addEventListener('click',function(){document.getElementById('riconoscimenti').scrollIntoView({behavior:'smooth'})});
+var sPR=null,sWA=null;document.querySelectorAll('.pr-opt').forEach(function(o){o.addEventListener('click',function(){document.querySelectorAll('.pr-opt').forEach(function(x){x.classList.remove('active')});o.classList.add('active');sPR=o.dataset.pr;sWA=o.dataset.wa})});
+document.getElementById('sendTicket').addEventListener('click',function(){var n=document.getElementById('fNome').value.trim(),d=document.getElementById('fNascita').value,q=document.getElementById('fQta').value,tt=document.getElementById('fTipo').value,c=document.getElementById('fContatto').value.trim();if(!n||!d||!q||!sPR||!c){alert('Compila tutto e scegli PR');return}var msg='Ciao '+sPR+'! Vengo dal sito del gruppo PR Drippy%0A%0A🎟️ RICHIESTA PREVENDITA%0ANome: '+n+'%0AData: '+d+'%0AQta: '+q+'%0ATipo: '+tt+'%0APR: '+sPR+'%0AContatto: '+c;window.open('https://wa.me/'+sWA+'?text='+msg,'_blank')});
 </script>
 </body>
 </html>
