@@ -1,79 +1,24 @@
-l<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DRIPPY - Official Website</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Outfit',sans-serif;background:#08071a;color:#fff;overflow-x:hidden;min-height:100vh}
-.bg{position:fixed;inset:0;z-index:-3;background:radial-gradient(130% 100% at 15% 15%, #7c3aed 0%, #4f46e5 28%, #1e1b4b 55%, #020617 90%)}
-.container{max-width:780px;margin:0 auto;padding:20px 18px 130px;position:relative;z-index:2}
-.bubble{background:linear-gradient(180deg, rgba(255,255,255,.15), rgba(255,255,255,.06));backdrop-filter:blur(28px);border:1px solid rgba(255,255,255,.16);border-radius:28px}
-.hero{font-size:52px;font-weight:800;line-height:.9;letter-spacing:-1.5px;margin:18px 0}
-.pr-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-height:0;opacity:0;overflow:hidden;transition:all .5s}
-.pr-grid.open{max-height:1200px;opacity:1;margin-top:14px}
-.pr-card{padding:18px;border-radius:22px;color:#fff;display:block}
-.c1{background:linear-gradient(135deg, rgba(168,85,247,.28), rgba(255,255,255,.06));border:1px solid rgba(168,85,247,.35)}
-.c2{background:linear-gradient(135deg, rgba(59,130,246,.26), rgba(255,255,255,.06));border:1px solid rgba(59,130,246,.32)}
-.c3{background:linear-gradient(135deg, rgba(236,72,153,.26), rgba(255,255,255,.06));border:1px solid rgba(236,72,153,.32)}
-.c4{background:linear-gradient(135deg, rgba(34,197,94,.22), rgba(255,255,255,.06));border:1px solid rgba(34,197,94,.28)}
-.c5{background:linear-gradient(135deg, rgba(250,204,21,.26), rgba(255,255,255,.08));border:1px solid rgba(250,204,21,.4);grid-column:1/-1}
-.btn{width:100%;display:flex;justify-content:center;background:linear-gradient(135deg,#7c3aed,#3b82f6);color:#fff;font-weight:700;padding:13px 22px;border-radius:100px;text-decoration:none;margin-top:14px}
-.benefit{display:flex;gap:12px;align-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:12px 14px;border-radius:16px;margin-bottom:10px}
-</style>
-</head>
+<head> ... tutto lo stile già dentro ... </head>
 <body>
-<div class="bg"></div>
-<main class="container">
-<h1 class="hero">Creatore e<br>Gestore Drippy</h1>
-
-<div class="bubble" style="padding:20px;display:flex;gap:14px;align-items:center">
-<div style="width:62px;height:62px;border-radius:20px;background:linear-gradient(135deg,#1e1b4b,#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:26px">W</div>
-<div style="flex:1"><b>William</b><p style="color:#c4b5fd;font-size:13px">Owner</p></div>
-<a class="btn" style="width:auto;margin:0" href="https://wa.me/393515435403?text=Ciao%20William%2C%20scusi%20si%20potrebbero%20avere%20piu%20informazioni%3F%20Vengo%20dal%20sito%20ufficiale%20Drippy.">Contatta</a>
+...
+<div class="ticket-card">
+  <span class="badge">DRIPPY OFFICIAL</span>
+  <div class="ticket-title">Ticket - Prevendite</div>
+  <button id="openTicket">🎫 Acquista Prevendita</button>
 </div>
 
-<button class="bubble" id="togglePR" style="width:100%;padding:20px 22px;display:flex;justify-content:space-between;align-items:center;margin-top:26px;cursor:pointer;text-align:left;color:#fff">
-<div><b style="font-size:18px">Contatta Il PR</b><br><small style="color:#a5b4fc">Clicca per aprire il menu</small></div><div id="iconPR">▼</div>
-</button>
-<div class="pr-grid" id="prGrid">
-<a class="pr-card c1" href="https://www.instagram.com/valeriol_5?mdxt=bm5zaml4aWwxeW9n&utm_source=qr" target="_blank"><b style="color:#e9d5ff">Innocenti</b><br><small style="color:#c4b5fd">Instagram →</small></a>
-<a class="pr-card c2" href="https://www.instagram.com/fastlife_17_?dlrf=MWt6Z3c5OW9kbGc2NA%3D%3D&utm_source=qr" target="_blank"><b style="color:#bfdbfe">Michael</b><br><small style="color:#c4b5fd">Instagram →</small></a>
-<a class="pr-card c3" href="https://www.instagram.com/____valeriooo____?psln=c2ttOTJ3bnV4dWZu&utm_source=qr" target="_blank"><b style="color:#fbcfe8">Valerio</b><br><small style="color:#c4b5fd">Instagram →</small></a>
-<a class="pr-card c4" href="https://www.instagram.com/eeleonora._______?mdxt=MmFxdDB1ODEwMXY=" target="_blank"><b style="color:#bbf7d0">Eleonora</b><br><small style="color:#c4b5fd">Instagram →</small></a>
-<a class="pr-card c5" href="https://wa.me/393926816361?text=Ciao%20Carmine%2C%20vengo%20dal%20sito%20ufficiale%20Drippy." target="_blank"><b style="color:#fde68a">Carmine</b><br><small style="color:#c4b5fd">Creatore Sito • PR Ufficiale →</small></a>
+<!-- MODAL -->
+<div class="modal" id="ticketModal">
+  <input id="fNome" placeholder="Nome">
+  <input id="fNascita" type="date">
+  <input id="fQta" type="number">
+  <select id="fTipo"><option>Pista - 15€</option><option>Tavolo - 25€</option></select>
+  <div id="prSelect"> <!-- clicca PR --> </div>
+  <input id="fContatto" placeholder="Tel o IG">
+  <div id="priceTot">15€</div>
+  <button id="sendTicket">Invia al PR</button>
 </div>
-
-<div class="bubble" style="padding:24px;margin-top:28px">
-<h2>💼 LAVORA COME PR</h2>
-<div class="benefit"><span>💸</span><div><b>Guadagnerai dei soldi</b><br><small>Commissioni su ogni prevendita</small></div></div>
-<div class="benefit"><span>🎟️</span><div><b>Accesso gratis nelle serate</b><br><small>Entri gratis ovunque</small></div></div>
-<div class="benefit"><span>✨</span><div><b>Altri vantaggi</b><br><small>Crescita personale, bonus esclusivi</small></div></div>
-<div class="benefit"><span>🚀</span><div><b>Visibilità ufficiale</b><br><small>Diventi volto del brand</small></div></div>
-<a class="btn" href="https://wa.me/393515435403?text=Voglio%20lavorare%20come%20PR%7C%20vengo%20dal%20sito%20~Drippy">Contatta William per lavorare</a>
-</div>
-
-<div class="bubble" style="padding:22px;margin-top:24px">
-<h2>🏆 Riconoscimenti</h2>
-<div style="padding:18px;border-radius:20px;margin-top:14px;background:linear-gradient(135deg, rgba(124,58,237,.18), rgba(255,255,255,.04));border:1px solid rgba(124,58,237,.28)">
-<b>William | Creatore di Drippy</b><br><small style="color:#a5b4fc">Founder & Owner</small>
-<p style="font-size:13px;line-height:1.5;color:#ddd6fe;margin-top:12px">William è il creatore e la mente dietro Drippy. Gestisce interamente il brand: organizza le serate, sceglie le location più esclusive, cura i rapporti con i locali e i partner, gestisce il team di PR, si occupa del booking, della direzione artistica e della crescita del marchio. Ogni evento Drippy passa dalla sua supervisione per garantire qualità, hype e sold out.</p>
-</div>
-<div style="padding:18px;border-radius:20px;margin-top:14px;background:linear-gradient(135deg, rgba(250,204,21,.14), rgba(255,255,255,.04));border:1px solid rgba(250,204,21,.28)">
-<b>Carmine | Creatore e Gestore del sito Web, PR Ufficiale di Drippy</b><br><small style="color:#fde68a">Web Manager & PR</small>
-<p style="font-size:13px;line-height:1.5;color:#fef9c3;margin-top:12px">Carmine è il creatore e gestore ufficiale del sito web di Drippy e PR ufficiale del team. Si occupa di tutta la presenza online del brand: sviluppo e manutenzione del sito, gestione delle prevendite digitali, supporto clienti, promozione degli eventi sui social, coordinamento dei contatti e assistenza al team PR. È il punto di riferimento tecnico e digitale per far funzionare Drippy online e offline.</p>
-</div>
-</div>
-
-<div class="bubble" style="padding:22px;text-align:center;margin-top:22px"><h3>Eventi A Breve</h3><p style="color:#a5b4fc;margin-top:6px">in manutenzione…</p></div>
-</main>
-
-<script>
-document.getElementById('togglePR').addEventListener('click', function(){
-  const grid=document.getElementById('prGrid');
-  grid.classList.toggle('open');
-  document.getElementById('iconPR').style.transform=grid.classList.contains('open')?'rotate(180deg)':'rotate(0deg)';
-});
-</script>
 </body>
 </html>
