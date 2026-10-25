@@ -10,8 +10,6 @@ body{font-family:'Outfit',sans-serif;background:#050000;color:#fff;overflow-x:hi
 .bg{position:fixed;inset:0;z-index:-3;background:radial-gradient(120% 80% at 50% -10%, #FFD700 0%, #8B0000 30%, #1a0000 60%, #000 85%)}
 .container{max-width:440px;margin:0 auto;padding:20px 16px 100px;position:relative;z-index:2}
 .glass{background:linear-gradient(180deg, rgba(255,215,0,.07), rgba(0,0,0,.55));backdrop-filter:blur(24px);border:1px solid rgba(255,215,0,.18);border-radius:24px}
-
-/* TOP RIGHT MORPH CHE HAI CHIESTO TU */
 .top-morph{position:fixed;top:12px;right:12px;z-index:20;width:72px;height:72px;border-radius:50%;background:#000;border:2px solid #FF8C00;box-shadow:0 0 25px rgba(255,140,0,.5);display:flex;align-items:center;justify-content:center;overflow:visible;transition:border-color .6s, box-shadow .6s}
 .morph-stage{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center}
 .colosseo-wrap{position:absolute;transition:all .8s cubic-bezier(.16,1,.3,1)}
@@ -25,7 +23,6 @@ body{font-family:'Outfit',sans-serif;background:#050000;color:#fff;overflow-x:hi
 @keyframes explodeAnim{0%{transform:scale(1);opacity:1}30%{transform:scale(1.4);opacity:1}100%{transform:scale(0);opacity:0;filter:blur(10px)}}
 .particle{position:absolute;width:4px;height:4px;border-radius:50%;pointer-events:none;animation:particleFly 0.8s ease-out forwards}
 @keyframes particleFly{0%{transform:translate(0,0) scale(1);opacity:1}100%{transform:translate(var(--x),var(--y)) scale(0);opacity:0}}
-
 .header{display:flex;flex-direction:column;align-items:center;margin:52px 0 22px}
 .logo-circle{width:170px;height:170px;border-radius:50%;background:#000;border:2.5px solid #FFD700;box-shadow:0 0 45px rgba(255,215,0,.5);display:flex;flex-direction:column;align-items:center;justify-content:center}
 .app-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 10px;margin-top:12px}
@@ -45,8 +42,6 @@ body{font-family:'Outfit',sans-serif;background:#050000;color:#fff;overflow-x:hi
 .pr-select{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}
 .pr-opt{padding:11px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,215,0,.12);cursor:pointer;text-align:center;font-size:11px;font-weight:700}
 .pr-opt.active{background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;border-color:#FFD700}
-
-/* LOADER CHE COLA */
 #loader{position:fixed;inset:0;z-index:9999;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .7s;overflow:hidden}
 #loader.hidden{opacity:0;pointer-events:none}
 .drip-container{display:flex;gap:3px;font-family:'Syne',sans-serif;font-size:58px;font-weight:900;letter-spacing:4px;color:#FFD700}
@@ -68,19 +63,13 @@ body{font-family:'Outfit',sans-serif;background:#050000;color:#fff;overflow-x:hi
 <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div><div class="loader-percent" id="loaderPercent">0%</div>
 </div>
 
-<!-- ANIMAZIONE TOP RIGHT COME DA AUDIO -->
 <div class="top-morph" id="topMorph">
 <div class="morph-stage" id="morphStage">
 <div class="colosseo-wrap" id="colosseoWrap">
-<svg id="colosseoSvg" viewBox="0 0 100 70" width="42" height="32" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 55 L5 20 Q20 10 50 8 Q80 10 95 20 L95 55 Q80 60 50 62 Q20 60 5 55 Z"/><path d="M5 35 Q20 28 50 26 Q80 28 95 35"/><path d="M10 25 L10 52 M20 22 L20 54 M30 20 L30 55 M40 19 L40 56 M50 18 L50 57 M60 19 L60 56 M70 20 L70 55 M80 22 L80 54 M90 25 L90 52"/></svg>
+<svg id="colosseoSvg" viewBox="0 0 100 70" width="42" height="32" fill="none" stroke="#FFD700" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 55 L5 20 Q20 10 50 8 Q80 10 95 20 L95 55 Q80 60 50 62 Q20 60 5 55 Z"/><path d="M5 35 Q20 28 50 26 Q80 28 95 35"/><path d="M10 25 L10 52 M20 22 L20 54 M30 20 L30 55 M40 19 L40 56 M50 18 L50 57 M60 19 L60 56 M70 20 L70 55 M80 22 L80 54 M90 25 L90 52"/></svg>
 </div>
 <div class="letter-wrap" id="letterWrap">
-<span class="drip-letter-top" id="lD">D</span>
-<span class="drip-letter-top" id="lR">R</span>
-<span class="drip-letter-top" id="lI">I</span>
-<span class="drip-letter-top" id="lP1">P</span>
-<span class="drip-letter-top" id="lP2">P</span>
-<span class="drip-letter-top" id="lY">Y</span>
+<span class="drip-letter-top" id="lD">D</span><span class="drip-letter-top" id="lR">R</span><span class="drip-letter-top" id="lI">I</span><span class="drip-letter-top" id="lP1">P</span><span class="drip-letter-top" id="lP2">P</span><span class="drip-letter-top" id="lY">Y</span>
 </div>
 </div>
 </div>
@@ -98,7 +87,7 @@ body{font-family:'Outfit',sans-serif;background:#050000;color:#fff;overflow-x:hi
 <a class="app" href="https://wa.me/393515435403?text=Ciao%20William%20dal%20sito%20Drippy"><div class="app-icon i2">W</div><span class="app-label">William<br>Owner</span></a>
 <div class="app" id="btnOpenPR"><div class="app-icon i1">PR</div><span class="app-label">Contatta<br>PR</span></div>
 <div class="app" id="btnOpenTicket"><div class="app-icon i3">🎟️</div><span class="app-label">Ticket<br>Prevendite</span></div>
-<a class="app" href="https://www.instagram.com/drippy.roma" target="_blank"><div class="app-icon i4">IG</div><span class="app-label">Instagram<br>Pagina</span></a>
+<a class="app" href="https://www.instagram.com/drippy.staff?cplk=MTBzb3I1YmNqMG1reQ%3D%3D&utm_source=qr" target="_blank"><div class="app-icon i4">IG</div><span class="app-label">Profilo<br>IG</span></a>
 <div class="app" id="btnScrollRicon"><div class="app-icon i5">🏆</div><span class="app-label">Chi<br>Siamo</span></div>
 <a class="app" href="https://wa.me/393926816361?text=Ciao%20Carmine%20dal%20sito%20Drippy"><div class="app-icon i6">C</div><span class="app-label">Carmine<br>Dev & PR</span></a>
 </div>
@@ -135,103 +124,45 @@ body{font-family:'Outfit',sans-serif;background:#050000;color:#fff;overflow-x:hi
 </div></div>
 
 <script>
-// LOADER
 (function(){var fill=document.getElementById('loaderFill'),perc=document.getElementById('loaderPercent'),loader=document.getElementById('loader');var p=0;var t=setInterval(function(){p+=1.1;if(p>100)p=100;fill.style.width=p+'%';perc.textContent=Math.floor(p)+'%';if(p>=100){clearInterval(t);setTimeout(function(){loader.classList.add('hidden');startTopMorphLoop()},600)}},75)})();
-
-// TOP MORPH LOOP - COME DA AUDIO
 function startTopMorphLoop(){
 const colosseoWrap=document.getElementById('colosseoWrap');
 const colosseoSvg=document.getElementById('colosseoSvg');
 const letterWrap=document.getElementById('letterWrap');
 const topMorph=document.getElementById('topMorph');
 const letters=[document.getElementById('lD'),document.getElementById('lR'),document.getElementById('lI'),document.getElementById('lP1'),document.getElementById('lP2'),document.getElementById('lY')];
-const colors=[
-{stroke:'#FF8C00',border:'#FF8C00',shadow:'rgba(255,140,0,.6)'},
-{stroke:'#00FF88',border:'#00FF88',shadow:'rgba(0,255,136,.6)'},
-{stroke:'#8A2BE2',border:'#8A2BE2',shadow:'rgba(138,43,226,.6)'},
-{stroke:'#0096FF',border:'#0096FF',shadow:'rgba(0,150,255,.6)'},
-{stroke:'#FFD700',border:'#FFD700',shadow:'rgba(255,215,0,.6)'}
-];
+const colors=[{stroke:'#FF8C00',border:'#FF8C00',shadow:'rgba(255,140,0,.6)'},{stroke:'#00FF88',border:'#00FF88',shadow:'rgba(0,255,136,.6)'},{stroke:'#8A2BE2',border:'#8A2BE2',shadow:'rgba(138,43,226,.6)'},{stroke:'#0096FF',border:'#0096FF',shadow:'rgba(0,150,255,.6)'},{stroke:'#FFD700',border:'#FFD700',shadow:'rgba(255,215,0,.6)'}];
 let colorIdx=0;
-
 async function cycle(){
- // FASE 1: COLOSSEO CHE CAMBIA COLORE E SI MUOVE STRANO
- colosseoWrap.style.opacity='1';
- colosseoWrap.style.transform='scale(1) rotate(0deg)';
- letterWrap.style.opacity='0';
+ colosseoWrap.style.opacity='1';colosseoWrap.style.transform='scale(1) rotate(0deg)';letterWrap.style.opacity='0';
  letters.forEach(l=>{l.classList.remove('show','heavy-drip');l.style.color=''});
  topMorph.style.opacity='1';
- 
  for(let i=0;i<5;i++){
    const c=colors[colorIdx%colors.length];
    colosseoSvg.setAttribute('stroke',c.stroke);
-   topMorph.style.borderColor=c.border;
-   topMorph.style.boxShadow=`0 0 25px ${c.shadow}`;
-   // movimento strano
+   topMorph.style.borderColor=c.border;topMorph.style.boxShadow=`0 0 25px ${c.shadow}`;
    colosseoWrap.style.transform=`scale(${1+i*0.06}) rotate(${i%2===0?3:-3}deg) translateY(${i%2===0?2:-2}px)`;
-   colorIdx++;
-   await new Promise(r=>setTimeout(r,700));
+   colorIdx++;await new Promise(r=>setTimeout(r,700));
  }
- 
- // FASE 2: TRASFORMA IN D R I P P Y LETTERA PER LETTERA
- colosseoWrap.style.transform='scale(0) rotate(20deg)';
- colosseoWrap.style.opacity='0';
- await new Promise(r=>setTimeout(r,500));
+ colosseoWrap.style.transform='scale(0) rotate(20deg)';colosseoWrap.style.opacity='0';await new Promise(r=>setTimeout(r,500));
  letterWrap.style.opacity='1';
- 
  for(let i=0;i<letters.length;i++){
    const c=colors[i%colors.length];
-   letters[i].style.color=c.stroke;
-   letters[i].classList.add('show');
-   topMorph.style.borderColor=c.border;
+   letters[i].style.color=c.stroke;letters[i].classList.add('show');topMorph.style.borderColor=c.border;
    await new Promise(r=>setTimeout(r,450));
  }
- 
- // FASE 3: COLA TANTISSIMO
  await new Promise(r=>setTimeout(r,600));
  letters.forEach(l=>l.classList.add('heavy-drip'));
- // cambia tutti i colori velocemente mentre cola
- for(let k=0;k<6;k++){
-   letters.forEach((l,idx)=>{
-     l.style.color=colors[(idx+k)%colors.length].stroke;
-   });
-   await new Promise(r=>setTimeout(r,180));
- }
- 
- // FASE 4: SCOPPIA E RIDIVENTA COLOSSEO
+ for(let k=0;k<6;k++){letters.forEach((l,idx)=>{l.style.color=colors[(idx+k)%colors.length].stroke;});await new Promise(r=>setTimeout(r,180));}
  await new Promise(r=>setTimeout(r,800));
- // particelle scoppio
- for(let p=0;p<12;p++){
-   const part=document.createElement('div');
-   part.className='particle';
-   part.style.background=colors[p%colors.length].stroke;
-   part.style.left='50%';part.style.top='50%';
-   part.style.setProperty('--x',(Math.random()*80-40)+'px');
-   part.style.setProperty('--y',(Math.random()*80-40)+'px');
-   document.getElementById('morphStage').appendChild(part);
-   setTimeout(()=>part.remove(),800);
- }
- letterWrap.classList.add('explode');
- await new Promise(r=>setTimeout(r,700));
- letterWrap.classList.remove('explode');
- letterWrap.style.opacity='0';
- letters.forEach(l=>{l.classList.remove('show','heavy-drip')});
- 
- // RITORNA COLOSSEO
- colosseoWrap.style.opacity='1';
- colosseoWrap.style.transform='scale(1.3) rotate(0deg)';
- colosseoSvg.setAttribute('stroke','#FFD700');
- topMorph.style.borderColor='#FFD700';
- topMorph.style.boxShadow='0 0 25px rgba(255,215,0,.5)';
- await new Promise(r=>setTimeout(r,400));
- colosseoWrap.style.transform='scale(1) rotate(0deg)';
- await new Promise(r=>setTimeout(r,1000));
- cycle();
+ for(let p=0;p<12;p++){const part=document.createElement('div');part.className='particle';part.style.background=colors[p%colors.length].stroke;part.style.left='50%';part.style.top='50%';part.style.setProperty('--x',(Math.random()*80-40)+'px');part.style.setProperty('--y',(Math.random()*80-40)+'px');document.getElementById('morphStage').appendChild(part);setTimeout(()=>part.remove(),800);}
+ letterWrap.classList.add('explode');await new Promise(r=>setTimeout(r,700));
+ letterWrap.classList.remove('explode');letterWrap.style.opacity='0';letters.forEach(l=>{l.classList.remove('show','heavy-drip')});
+ colosseoWrap.style.opacity='1';colosseoWrap.style.transform='scale(1.3) rotate(0deg)';colosseoSvg.setAttribute('stroke','#FFD700');topMorph.style.borderColor='#FFD700';topMorph.style.boxShadow='0 0 25px rgba(255,215,0,.5)';await new Promise(r=>setTimeout(r,400));
+ colosseoWrap.style.transform='scale(1) rotate(0deg)';await new Promise(r=>setTimeout(r,1000));cycle();
 }
 cycle();
 }
-
-// RESTO SITO
 function togglePR(){var g=document.getElementById('prGrid'),a=document.getElementById('arrowPR');g.classList.toggle('open');a.textContent=g.classList.contains('open')?'▲':'▼'}
 document.getElementById('btnOpenPR').addEventListener('click',togglePR);
 document.getElementById('headerPR').addEventListener('click',togglePR);
