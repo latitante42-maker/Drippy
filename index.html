@@ -15,29 +15,23 @@ body{font-family:'Outfit',sans-serif;background:#050000;color:#fff;overflow-x:hi
 .container{max-width:440px;margin:0 auto;padding:20px 16px 100px;position:relative;z-index:2}
 .glass{background:linear-gradient(180deg, rgba(255,215,0,.08), rgba(0,0,0,.6));backdrop-filter:blur(24px);border:1px solid rgba(255,215,0,.18);border-radius:24px;transition:transform .2s, box-shadow .2s}
 .glass:active{transform:scale(0.98)}
-
-/* COLOSSEO TOP RIGHT SOLO COLORE */
 .top-colosseo{position:fixed;top:12px;right:12px;z-index:20;width:64px;height:64px;border-radius:50%;background:radial-gradient(#1a1a1a,#000);border:2px solid #FFD700;display:flex;align-items:center;justify-content:center;box-shadow:0 0 22px rgba(255,215,0,.4);animation:topPulse 2s infinite alternate;overflow:hidden}
 @keyframes topPulse{0%{transform:scale(1)}100%{transform:scale(1.08)}}
 .top-colosseo svg{transition:stroke .6s, transform .6s, filter .6s}
-
 .header{display:flex;flex-direction:column;align-items:center;margin:48px 0 20px}
 .logo-circle{width:172px;height:172px;border-radius:50%;background:radial-gradient(circle at 30% 30%, #1a1a1a, #000);border:2.5px solid #FFD700;box-shadow:0 0 50px rgba(255,215,0,.55), inset 0 0 20px rgba(255,215,0,.1);display:flex;flex-direction:column;align-items:center;justify-content:center;animation:logoFloat 3s infinite ease-in-out, logoHue 6s infinite alternate}
 @keyframes logoFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-6px) rotate(1deg)}}
 @keyframes logoHue{0%{filter:hue-rotate(0deg)}100%{filter:hue-rotate(20deg)}}
-
 .app-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 10px;margin-top:14px}
 .app{display:flex;flex-direction:column;align-items:center;gap:7px;cursor:pointer;text-decoration:none;color:#fff;-webkit-tap-highlight-color:transparent;animation:appPop .6s cubic-bezier(.16,1,.3,1) backwards}
 .app:nth-child(1){animation-delay:.05s}.app:nth-child(2){animation-delay:.15s}.app:nth-child(3){animation-delay:.25s}.app:nth-child(4){animation-delay:.35s}.app:nth-child(5){animation-delay:.45s}
 @keyframes appPop{0%{opacity:0;transform:translateY(20px) scale(0.8)}100%{opacity:1;transform:translateY(0) scale(1)}}
 .app:active{transform:scale(0.82)!important}
 .app-icon{width:74px;height:74px;border-radius:20px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;box-shadow:0 10px 25px rgba(0,0,0,.5);border:1.2px solid rgba(255,215,0,.25);pointer-events:none;transition:transform .25s, box-shadow .25s;animation:iconBounce 3.5s infinite ease-in-out}
-.app:nth-child(2) .app-icon{animation-delay:.4s}.app:nth-child(3) .app-icon{animation-delay:.8s}.app:nth-child(4) .app-icon{animation-delay:1.2s}.app:nth-child(5) .app-icon{animation-delay:1.6s}
 @keyframes iconBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
 .app:hover .app-icon{transform:translateY(-3px) scale(1.05);box-shadow:0 15px 30px rgba(255,215,0,.3)}
 .app-label{font-size:10.5px;font-weight:700;text-align:center;line-height:1.1;pointer-events:none}
 .i1{background:linear-gradient(135deg,#FFD700,#FF8C00)}.i2{background:linear-gradient(135deg,#8B0000,#FFD700)}.i3{background:linear-gradient(135deg,#1a0000,#FF4500)}.i4{background:linear-gradient(135deg,#111,#FFD700)}.i5{background:linear-gradient(135deg,#FF8C00,#8B0000)}
-
 .pr-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-height:0;opacity:0;overflow:hidden;transition:all .55s cubic-bezier(.16,1,.3,1)}
 .pr-grid.open{max-height:600px;opacity:1;margin-top:12px}
 .pr-card{padding:12px;border-radius:16px;background:rgba(255,215,0,.05);border:1px solid rgba(255,215,0,.12);text-align:center;font-weight:700;font-size:12px;display:block;text-decoration:none;color:#fff;transition:transform .15s, background .15s}
@@ -53,8 +47,6 @@ body{font-family:'Outfit',sans-serif;background:#050000;color:#fff;overflow-x:hi
 .pr-select{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}
 .pr-opt{padding:11px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,215,0,.12);cursor:pointer;text-align:center;font-size:11px;font-weight:700;transition:.15s}
 .pr-opt.active{background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;border-color:#FFD700;transform:scale(1.03)}
-
-/* LOADER */
 #loader{position:fixed;inset:0;z-index:9999;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .7s;overflow:hidden}
 #loader.hidden{opacity:0;pointer-events:none}
 .drip-container{display:flex;gap:3px;font-family:'Syne',sans-serif;font-size:56px;font-weight:900;letter-spacing:4px;color:#FFD700;filter:drop-shadow(0 0 20px rgba(255,215,0,.5))}
@@ -68,6 +60,9 @@ body{font-family:'Outfit',sans-serif;background:#050000;color:#fff;overflow-x:hi
 .loader-fill{height:100%;width:0%;background:linear-gradient(90deg,#FFD700,#FF8C00,#FFD700);background-size:200% 100%;border-radius:100px;animation:shimmer .8s linear infinite}
 @keyframes shimmer{from{background-position:0%}to{background-position:200%}}
 .loader-percent{margin-top:12px;font-size:13px;color:#FFD700;font-weight:900;letter-spacing:3px}
+/* VIDEO EVENTI */
+.event-video-wrap{padding:0;overflow:hidden}
+.event-video{width:100%;aspect-ratio:9/16;max-height:75vh;object-fit:cover;display:block;background:#000;border-radius:24px 24px 0 0}
 </style>
 </head>
 <body>
@@ -111,6 +106,20 @@ body{font-family:'Outfit',sans-serif;background:#050000;color:#fff;overflow-x:hi
 </div>
 </div>
 
+<div id="eventi" class="glass event-video-wrap" style="margin-top:18px">
+<video class="event-video" autoplay muted loop playsinline controls poster="">
+<source src="halloween.mp4" type="video/mp4">
+Il tuo browser non supporta video.
+</video>
+<div style="padding:14px">
+<div style="display:flex;justify-content:space-between;align-items:center">
+<b style="font-size:15px;color:#FFD700">🎃 HALLOWEEN - 31 OTTOBRE</b><span style="background:#FF0033;color:#fff;padding:4px 10px;border-radius:999px;font-size:10px;font-weight:900">NUOVO</span>
+</div>
+<p style="font-size:12px;color:#ddd;margin-top:6px;line-height:1.4">GRANDANGOLO • Via del Foro Italico 501<br>DRIPPY x GRANDANGOLO - Are you ready?</p>
+<p style="font-size:10px;color:#FFD700;margin-top:8px;letter-spacing:1px">📍 ROMA • BIGLIETTI IN DM</p>
+</div>
+</div>
+
 <div id="riconoscimenti" class="glass" style="padding:14px;margin-top:18px">
 <h2 style="font-size:13px;letter-spacing:1px">🏛️ CHI SIAMO • ROMA</h2>
 <div style="margin-top:10px;padding:12px;border-radius:16px;background:rgba(255,215,0,.06);border:1px solid rgba(255,215,0,.15)"><b>William | Fondatore</b><p style="font-size:12px;color:#FFD700;margin-top:6px;line-height:1.4">Ha creato Drippy a Roma. Contatti con locali, organizzazione serate, liste, coordinazione PR.</p></div>
@@ -132,11 +141,8 @@ body{font-family:'Outfit',sans-serif;background:#050000;color:#fff;overflow-x:hi
 </div></div>
 
 <script>
-// LOADER
 (function(){var fill=document.getElementById('loaderFill'),perc=document.getElementById('loaderPercent'),loader=document.getElementById('loader');var p=0;var t=setInterval(function(){p+=1.2;if(p>100)p=100;fill.style.width=p+'%';perc.textContent=Math.floor(p)+'%';if(p>=100){clearInterval(t);setTimeout(function(){loader.classList.add('hidden');startEffects()},600)}},70)})();
-
 function startEffects(){
-// COLOSSEO CHE CAMBIA COLORE IN LOOP - SOLO COLORE
 const svg=document.getElementById('colosseoSvg');
 const top=document.getElementById('topColosseo');
 const colors=['#FF8C00','#00FF88','#8A2BE2','#0096FF','#FFD700','#FF4500'];
@@ -152,8 +158,6 @@ setInterval(()=>{
   setTimeout(()=>{top.style.transform='scale(1) rotate(0deg)';svg.style.transform='scale(1) rotate(0deg)'},400);
   i++;
 },900);
-
-// PARTICELLE ROMA DIVERTIMENTO
 const dotsCont=document.getElementById('bgDots');
 function spawnDot(){
   const d=document.createElement('div');
@@ -167,15 +171,11 @@ function spawnDot(){
   setTimeout(()=>d.remove(),6000);
 }
 setInterval(spawnDot,180);
-
-// LOGO REATTIVO AL TOCCO
 document.getElementById('logoMain').addEventListener('click',()=>{
   document.getElementById('logoMain').style.transform='scale(1.15) rotate(5deg)';
   setTimeout(()=>{document.getElementById('logoMain').style.transform=''},300);
 });
 }
-
-// PR TOGGLE CON ANIMAZIONE
 function togglePR(){
   var g=document.getElementById('prGrid'),a=document.getElementById('arrowPR');
   g.classList.toggle('open');
@@ -185,13 +185,11 @@ function togglePR(){
 }
 document.getElementById('btnOpenPR').addEventListener('click',togglePR);
 document.getElementById('headerPR').addEventListener('click',togglePR);
-
 var ticketModal=document.getElementById('ticketModal');
 document.getElementById('btnOpenTicket').addEventListener('click',()=>ticketModal.classList.add('open'));
 document.getElementById('closeTicket').addEventListener('click',()=>ticketModal.classList.remove('open'));
 ticketModal.addEventListener('click',e=>{if(e.target===ticketModal)ticketModal.classList.remove('open')});
 document.getElementById('btnScrollRicon').addEventListener('click',()=>document.getElementById('riconoscimenti').scrollIntoView({behavior:'smooth'}));
-
 let sPR=null,sWA=null;
 document.querySelectorAll('.pr-opt').forEach(o=>{
   o.addEventListener('click',()=>{
@@ -200,7 +198,6 @@ document.querySelectorAll('.pr-opt').forEach(o=>{
     if(navigator.vibrate) navigator.vibrate(30);
   });
 });
-
 document.getElementById('sendTicket').addEventListener('click',()=>{
 let n=document.getElementById('fNome').value.trim(),d=document.getElementById('fNascita').value,q=document.getElementById('fQta').value,t=document.getElementById('fTipo').value,c=document.getElementById('fContatto').value.trim();
 if(!n||!d||!q||!sPR||!c){alert('Compila tutto e scegli PR');return}
