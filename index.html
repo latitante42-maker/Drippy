@@ -13,35 +13,33 @@ body{font-family:'Outfit',sans-serif;background:#0a0020;color:#fff;overflow-x:hi
 .dot{position:absolute;width:5px;height:5px;border-radius:50%;opacity:.6;animation:floatDot linear infinite;box-shadow:0 0 10px currentColor}
 @keyframes floatDot{0%{transform:translateY(110vh) translateX(0) scale(0)}10%{opacity:1}100%{transform:translateY(-10vh) translateX(50px) scale(1.5);opacity:0}}
 .container{max-width:440px;margin:0 auto;padding:20px 16px 140px;position:relative;z-index:2}
-.glass{background:linear-gradient(180deg, rgba(138,43,226,.12), rgba(0,0,0,.7));backdrop-filter:blur(24px);border:1px solid rgba(138,43,226,.35);border-radius:24px;transition:transform .2s;box-shadow:0 0 30px rgba(138,43,226,.15)}
-.glass:active{transform:scale(0.98)}
-.top-colosseo{position:fixed;top:12px;right:12px;z-index:20;width:64px;height:64px;border-radius:50%;background:radial-gradient(#1a0033,#000);border:2px solid #8a2be2;display:flex;align-items:center;justify-content:center;box-shadow:0 0 22px rgba(138,43,226,.6);animation:topPulse 2s infinite alternate;overflow:hidden}
+.glass{background:linear-gradient(180deg, rgba(138,43,226,.14), rgba(0,0,0,.75));backdrop-filter:blur(26px);border:1.5px solid rgba(138,43,226,.35);border-radius:26px;box-shadow:0 0 35px rgba(138,43,226,.18), inset 0 1px 0 rgba(255,255,255,.08)}
+.top-colosseo{position:fixed;top:12px;right:12px;z-index:20;width:64px;height:64px;border-radius:50%;background:radial-gradient(#1a0033,#000);border:2px solid #8a2be2;display:flex;align-items:center;justify-content:center;box-shadow:0 0 22px rgba(138,43,226,.6);animation:topPulse 2s infinite alternate}
 @keyframes topPulse{0%{transform:scale(1)}100%{transform:scale(1.08)}}
-.top-colosseo svg{transition:stroke .6s, transform .6s, filter .6s}
 .header{display:flex;flex-direction:column;align-items:center;margin:48px 0 20px}
-.logo-circle{width:172px;height:172px;border-radius:50%;background:radial-gradient(circle at 30% 30%, #2a0080, #000);border:2.5px solid #8a2be2;box-shadow:0 0 60px rgba(138,43,226,.7), inset 0 0 20px rgba(138,43,226,.2);display:flex;flex-direction:column;align-items:center;justify-content:center;animation:logoFloat 3s infinite ease-in-out}
-@keyframes logoFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-6px) rotate(1deg)}}
-.app-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 10px;margin-top:14px}
-.app{display:flex;flex-direction:column;align-items:center;gap:7px;cursor:pointer;text-decoration:none;color:#fff;-webkit-tap-highlight-color:transparent}
-.app-icon{width:74px;height:74px;border-radius:20px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;box-shadow:0 10px 25px rgba(0,0,0,.5);border:1.2px solid rgba(138,43,226,.4)}
-.app-label{font-size:10.5px;font-weight:700;text-align:center;line-height:1.1}
-.i1{background:linear-gradient(135deg,#8a2be2,#4b00ff)}.i2{background:linear-gradient(135deg,#0000ff,#8a2be2)}.i3{background:linear-gradient(135deg,#1a0033,#ff00ff)}.i4{background:linear-gradient(135deg,#4b00ff,#00ffff)}.i5{background:linear-gradient(135deg,#8a2be2,#ff1493)}.i6{background:linear-gradient(135deg,#00ff88,#8a2be2)}
+.logo-circle{width:172px;height:172px;border-radius:50%;background:radial-gradient(circle at 30% 30%, #2a0080, #000);border:2.5px solid #8a2be2;box-shadow:0 0 60px rgba(138,43,226,.7), 0 0 100px rgba(0,0,255,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;animation:logoFloat 3s infinite ease-in-out}
+@keyframes logoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.app-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px 14px;margin-top:16px}
+.app{display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;text-decoration:none;color:#fff;-webkit-tap-highlight-color:transparent;background:rgba(138,43,226,.07);border:1px solid rgba(138,43,226,.18);border-radius:22px;padding:16px 8px;transition:transform .15s, box-shadow .15s}
+.app:active{transform:scale(0.95)} .app:hover{box-shadow:0 0 20px rgba(138,43,226,.3)}
+.app-icon{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:22px;box-shadow:0 8px 20px rgba(0,0,0,.4)}
+.app-label{font-size:11px;font-weight:800;text-align:center;line-height:1.1;letter-spacing:.5px}
+.i1{background:linear-gradient(135deg,#8a2be2,#4b00ff)}.i3{background:linear-gradient(135deg,#1a0033,#ff00ff)}.i4{background:linear-gradient(135deg,#4b00ff,#00ffff)}.i6{background:linear-gradient(135deg,#00ff88,#8a2be2)}
 .pr-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-height:0;opacity:0;overflow:hidden;transition:all .55s}
-.pr-grid.open{max-height:800px;opacity:1;margin-top:12px}
-.pr-card{padding:12px;border-radius:16px;background:rgba(138,43,226,.08);border:1px solid rgba(138,43,226,.2);text-align:center;font-weight:700;font-size:12px;display:block;text-decoration:none;color:#fff}
-.btn{width:100%;display:flex;justify-content:center;align-items:center;background:linear-gradient(135deg,#8a2be2,#4b00ff,#0000ff);color:#fff;font-weight:900;padding:14px;border-radius:100px;border:none;cursor:pointer;margin-top:12px;box-shadow:0 10px 25px rgba(138,43,226,.4);transition:transform .15s}
-.btn:active{transform:scale(0.96)}
+.pr-grid.open{max-height:1000px;opacity:1;margin-top:14px}
+.pr-card{padding:13px;border-radius:16px;background:rgba(138,43,226,.08);border:1px solid rgba(138,43,226,.2);text-align:center;font-weight:700;font-size:12px;display:block;text-decoration:none;color:#fff;transition:transform .1s}
+.pr-card:active{transform:scale(0.97)}
+.pr-card.new{border-color:#ff8a00;background:linear-gradient(135deg,rgba(255,138,0,.18),rgba(138,43,226,.18));box-shadow:0 0 15px rgba(255,138,0,.2)}
+.btn{width:100%;display:flex;justify-content:center;align-items:center;background:linear-gradient(135deg,#8a2be2,#4b00ff,#0000ff);color:#fff;font-weight:900;padding:14px;border-radius:100px;border:none;cursor:pointer;margin-top:12px;box-shadow:0 10px 25px rgba(138,43,226,.4)}
 .modal{position:fixed;inset:0;background:rgba(10,0,32,.88);backdrop-filter:blur(18px);z-index:50;display:none;align-items:flex-end;justify-content:center}
-.modal.open{display:flex}.modal-box{background:linear-gradient(180deg,#1a0033,#000);border-top:1.5px solid rgba(138,43,226,.4);border-radius:28px 28px 0 0;padding:20px;width:100%;max-width:500px;max-height:92vh;overflow:auto;animation:slideUp .35s}
-@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.modal.open{display:flex}.modal-box{background:linear-gradient(180deg,#1a0033,#000);border-top:1.5px solid rgba(138,43,226,.4);border-radius:28px 28px 0 0;padding:20px;width:100%;max-width:500px;max-height:92vh;overflow:auto}
 .input{width:100%;background:rgba(138,43,226,.08);border:1.5px solid rgba(138,43,226,.25);border-radius:12px;padding:12px;color:#fff;margin-top:6px;outline:none}
-.input:focus{border-color:#8a2be2}
 .textarea{min-height:90px;resize:none}
 .label{font-size:10px;color:#8a2be2;margin-top:12px;display:block;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}
 .pr-select{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}
 .pr-opt{padding:11px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(138,43,226,.2);cursor:pointer;text-align:center;font-size:11px;font-weight:700}
 .pr-opt.active{background:linear-gradient(135deg,#8a2be2,#4b00ff);color:#fff;border-color:#8a2be2}
-#loader{position:fixed;inset:0;z-index:9999;background:#05000f;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .7s;overflow:hidden}
+#loader{position:fixed;inset:0;z-index:9999;background:#05000f;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .7s}
 #loader.hidden{opacity:0;pointer-events:none}
 .drip-container{display:flex;gap:6px;font-family:'Fredoka',sans-serif;font-size:62px;font-weight:700;filter:drop-shadow(0 0 20px rgba(138,43,226,.8))}
 .drip-letter{position:relative;display:inline-block;-webkit-text-stroke:3px #8a2be2;text-shadow:0 0 15px #8a2be2, 0 0 30px #0000ff;animation:wobbleDrippy .7s infinite}
@@ -60,102 +58,41 @@ body{font-family:'Outfit',sans-serif;background:#0a0020;color:#fff;overflow-x:hi
 <body>
 <div id="loader"><div class="drip-container"><span class="drip-letter" style="--delay:.05s;--dur:1.1s;--drip:#ff00ff;color:#000">D</span><span class="drip-letter" style="--delay:.2s;--dur:1.3s;--drip:#8a2be2;color:#1a0033">R</span><span class="drip-letter" style="--delay:.1s;--dur:1s;--drip:#00ffff;color:#0000ff">I</span><span class="drip-letter" style="--delay:.25s;--dur:1.4s;--drip:#4b00ff;color:#000">P</span><span class="drip-letter" style="--delay:.15s;--dur:1.2s;--drip:#ff1493;color:#2a0080">P</span><span class="drip-letter" style="--delay:.3s;--dur:1.35s;--drip:#0000ff;color:#000">Y</span></div><div class="loader-logo"><svg viewBox="0 0 100 70" width="100" height="60" fill="none" stroke="#8a2be2" stroke-width="1.7" stroke-linecap="round"><path d="M5 55 L5 20 Q20 10 50 8 Q80 10 95 20 L95 55 Q80 60 50 62 Q20 60 5 55 Z"/><path d="M5 35 Q20 28 50 26 Q80 28 95 35"/><path d="M10 25 L10 52 M20 22 L20 54 M30 20 L30 55 M40 19 L40 56 M50 18 L50 57 M60 19 L60 56 M70 20 L70 55 M80 22 L80 54 M90 25 L90 52"/></svg><span style="font-size:11px;font-weight:900;color:#8a2be2;letter-spacing:3px;margin-top:5px">DRIPPY</span></div><div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div><div class="loader-percent" id="loaderPercent">0%</div></div>
 <div class="bg-dots" id="bgDots"></div>
-<div class="top-colosseo" id="topColosseo"><svg id="colosseoSvg" viewBox="0 0 100 70" width="36" height="26" fill="none" stroke="#8a2be2" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 55 L5 20 Q20 10 50 8 Q80 10 95 20 L95 55 Q80 60 50 62 Q20 60 5 55 Z"/><path d="M5 35 Q20 28 50 26 Q80 28 95 35"/><path d="M10 25 L10 52 M20 22 L20 54 M30 20 L30 55 M40 19 L40 56 M50 18 L50 57 M60 19 L60 56 M70 20 L70 55 M80 22 L80 54 M90 25 L90 52"/></svg></div>
+<div class="top-colosseo"><svg viewBox="0 0 100 70" width="36" height="26" fill="none" stroke="#8a2be2" stroke-width="2.4" stroke-linecap="round"><path d="M5 55 L5 20 Q20 10 50 8 Q80 10 95 20 L95 55 Q80 60 50 62 Q20 60 5 55 Z"/><path d="M5 35 Q20 28 50 26 Q80 28 95 35"/><path d="M10 25 L10 52 M20 22 L20 54 M30 20 L30 55 M40 19 L40 56 M50 18 L50 57 M60 19 L60 56 M70 20 L70 55 M80 22 L80 54 M90 25 L90 52"/></svg></div>
 <div class="bg"></div>
 <main class="container">
-<div class="header"><div class="logo-circle" id="logoMain"><svg viewBox="0 0 100 80" width="110" height="75" fill="none" stroke="#8a2be2" stroke-width="1.8" stroke-linecap="round"><path d="M8 58 L8 24 Q22 12 50 10 Q78 12 92 24 L92 58 Q78 64 50 66 Q22 64 8 58 Z"/><path d="M8 38 Q22 30 50 28 Q78 30 92 38"/><path d="M12 27 L12 56 M22 24 L22 58 M33 22 L33 60 M44 21 L44 61 M55 20 L55 62 M66 21 L66 61 M77 24 L77 58 M88 27 L88 56"/></svg><span style="font-size:12px;font-weight:900;color:#8a2be2;letter-spacing:4px;margin-top:6px">DRIPPY</span><span style="font-size:7px;color:#a855f7;letter-spacing:2px">ROMA • PR • PREVENDITE</span></div>
-<h1 style="font-family:'Syne';font-size:22px;font-weight:800;margin-top:14px;text-align:center;background:linear-gradient(90deg,#8a2be2,#4b00ff,#00ffff,#ff00ff,#8a2be2);background-size:300% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent">GRUPPO PR UFFICIALE<br>VENDITA PREVENDITE</h1>
-<p style="font-size:11px;opacity:.6;margin-top:6px;letter-spacing:2px;text-align:center;color:#a855f7">LISTE • TAVOLI • PISTA • ROMA CENTRO • DRIPPY</p></div>
-<div style="font-size:11px;letter-spacing:2px;color:#8a2be2;margin:18px 0 10px;opacity:.9">APPLICAZIONI • TOCCA E DIVERTITI</div>
+<div class="header"><div class="logo-circle"><svg viewBox="0 0 100 80" width="110" height="75" fill="none" stroke="#8a2be2" stroke-width="1.8" stroke-linecap="round"><path d="M8 58 L8 24 Q22 12 50 10 Q78 12 92 24 L92 58 Q78 64 50 66 Q22 64 8 58 Z"/><path d="M8 38 Q22 30 50 28 Q78 30 92 38"/><path d="M12 27 L12 56 M22 24 L22 58 M33 22 L33 60 M44 21 L44 61 M55 20 L55 62 M66 21 L66 61 M77 24 L77 58 M88 27 L88 56"/></svg><span style="font-size:12px;font-weight:900;color:#8a2be2;letter-spacing:4px;margin-top:6px">DRIPPY</span><span style="font-size:7px;color:#a855f7;letter-spacing:2px">ROMA • PR • PREVENDITE</span></div>
+<h1 style="font-family:'Syne';font-size:22px;font-weight:800;margin-top:14px;text-align:center;background:linear-gradient(90deg,#8a2be2,#4b00ff,#00ffff,#ff00ff,#8a2be2);background-size:300% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent">GRUPPO PR UFFICIALE<br>VENDITA PREVENDITE</h1></div>
+<div style="font-size:11px;letter-spacing:2px;color:#8a2be2;margin:18px 0 10px;opacity:.9">APPLICAZIONI • DRIPPY OS</div>
 <div class="app-grid">
-<a class="app" href="https://wa.me/393515435403?text=Ciao%20William%20dal%20sito%20Drippy"><div class="app-icon i2">W</div><span class="app-label">William<br>Owner</span></a>
 <div class="app" id="btnOpenPR"><div class="app-icon i1">PR</div><span class="app-label">Contatta<br>PR</span></div>
 <div class="app" id="btnOpenTicket"><div class="app-icon i3">🎟️</div><span class="app-label">Ticket<br>Prevendite</span></div>
 <div class="app" id="btnOpenLavora"><div class="app-icon i6">💼</div><span class="app-label">Lavora<br>come PR</span></div>
 <div class="app" id="btnScrollRicon"><div class="app-icon i4">🏆</div><span class="app-label">Chi<br>Siamo</span></div>
-<a class="app" href="https://wa.me/27742982940?text=888%20fix%20and%20bugs%20%2F%20Salve%2C%20contatto%20il%20numero%20verde%20di%20drippy%20per%20determinati%20motivi.%20Posso%20avere%20assistenza%3F"><div class="app-icon i5">C</div><span class="app-label">Carmine<br>Dev & PR</span></a>
 </div>
-<div class="glass" style="padding:14px;margin-top:16px"><div style="display:flex;justify-content:space-between;align-items:center" id="headerPR"><b style="font-size:13px">Contatta Il PR • Roma</b><span style="color:#8a2be2" id="arrowPR">▼</span></div><div class="pr-grid" id="prGrid">
+<div class="glass" style="padding:14px;margin-top:18px"><div style="display:flex;justify-content:space-between;align-items:center" id="headerPR"><b style="font-size:13px">Contatta Il PR • Roma</b><span style="color:#8a2be2" id="arrowPR">▼</span></div><div class="pr-grid" id="prGrid">
 <a class="pr-card" href="https://www.instagram.com/valeriol_5" target="_blank">Innocenti</a>
 <a class="pr-card" href="https://www.instagram.com/fastlife_17_" target="_blank">Michael</a>
 <a class="pr-card" href="https://www.instagram.com/____valeriooo____" target="_blank">Valerio</a>
 <a class="pr-card" href="https://www.instagram.com/_.aalexx___0.1.0._" target="_blank">Alex</a>
-<a class="pr-card" href="https://www.instagram.com/eeleonora._______" target="_blank">Eleonora<br><small style="color:#a855f7">Founder & PR</small></a>
-<a class="pr-card" style="grid-column:1/-1;border:1.5px solid #8a2be2;background:linear-gradient(135deg,rgba(138,43,226,.2),rgba(75,0,255,.15))" href="https://wa.me/27742982940?text=888%20fix%20and%20bugs%20%2F%20Salve%2C%20contatto%20il%20numero%20verde%20di%20drippy%20per%20determinati%20motivi.%20Posso%20avere%20assistenza%3F">Carmine<br><small>+27 74 298 2940 • Numero Verde</small></a>
+<a class="pr-card" href="https://www.instagram.com/eeleonora._______" target="_blank">Eleonora<br><small>Founder & PR</small></a>
+<a class="pr-card new" href="https://www.instagram.com/utentesconosciuto946" target="_blank">PR-alto Mirko<br><small style="color:#ff8a00">⭐ NUOVO - Alto</small></a>
+<a class="pr-card" style="background:linear-gradient(135deg,rgba(255,138,0,.12),rgba(138,43,226,.12));border-color:#ff8a00" href="https://wa.me/393508381799?text=*888%20fix%20and%20bugs*%20%2F%20Salve%2C%20contatto%20il%20numero%20verde%20di%20drippy%20per%20determinati%20motivi.%20Posso%20avere%20assistenza%3F">Mirko<br><small>+39 350 838 1799 - WA</small></a>
+<a class="pr-card" style="grid-column:1/-1;border:1.5px solid #8a2be2;background:linear-gradient(135deg,rgba(138,43,226,.2),rgba(75,0,255,.15))" href="https://wa.me/27742982940?text=*888%20fix%20and%20bugs*%20%2F%20Salve%2C%20contatto%20il%20numero%20verde%20di%20drippy%20per%20determinati%20motivi.%20Posso%20avere%20assistenza%3F">Carmine<br><small>+27 74 298 2940 • Numero Verde</small></a>
 </div></div>
-<div id="eventi" class="glass" style="padding:0;margin-top:18px;overflow:hidden"><img src="IMG_5755.jpeg" alt="GRANDANGOLO X DRIPPY - 31 OTTOBRE HALLOWEEN" style="width:100%;aspect-ratio:9/16;max-height:85vh;object-fit:cover;display:block;background:#000"><div style="padding:14px"><div style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:15px;color:#a855f7">🎃 HALLOWEEN - 31 OTTOBRE</b><span style="background:#8a2be2;color:#fff;padding:4px 10px;border-radius:999px;font-size:10px;font-weight:900">DRIPPY</span></div><p style="font-size:12px;color:#ddd;margin-top:6px;line-height:1.4">GRANDANGOLO • Via del Foro Italico 501<br>GRANDANGOLO X DRIPPY - Are you ready?</p><p style="font-size:10px;color:#8a2be2;margin-top:8px;letter-spacing:1px">📍 ROMA • 31 OTTOBRE • BIGLIETTI IN DM</p></div></div>
-
-<div id="lavora" class="glass" style="padding:18px;margin-top:18px;background:linear-gradient(180deg, rgba(0,255,136,.08), rgba(0,0,0,.7));border-color:rgba(0,255,136,.35)">
-<h2 style="font-family:'Syne';font-size:16px;color:#00ff88">💼 LAVORA COME PR - DRIPPY</h2>
-<p style="font-size:11px;color:#a7f3d0;margin-top:6px;line-height:1.4">Vuoi entrare nel team DRIPPY? Compila il formulario e invia al Numero Verde Clienti!</p>
-
-<label class="label" style="color:#00ff88">Nome e Cognome</label>
-<input class="input" id="lNome" placeholder="Mario Rossi" style="border-color:rgba(0,255,136,.25)" autocomplete="off">
-
-<label class="label" style="color:#00ff88">Età</label>
-<input class="input" id="lEta" type="number" placeholder="Es: 21" min="16" max="40" style="border-color:rgba(0,255,136,.25)">
-
-<label class="label" style="color:#00ff88">Perché vuoi lavorare come PR?</label>
-<textarea class="input textarea" id="lPerche" placeholder="Scrivi qui le tue motivazioni..."></textarea>
-
-<label class="label" style="color:#00ff88">Hai già altre esperienze? Se sì dove</label>
-<textarea class="input textarea" id="lEsperienze" placeholder="Es: Ho lavorato da... / Nessuna esperienza ma..."></textarea>
-
-<label class="label" style="color:#00ff88">Firma (Nome completo per conferma)</label>
-<input class="input" id="lFirma" placeholder="Firma con nome e cognome" style="border-color:rgba(0,255,136,.25)" autocomplete="off">
-
-<button class="btn" id="sendLavora" style="background:linear-gradient(135deg,#00ff88,#00cc6a);color:#000;margin-top:16px">📩 INVIA CANDIDATURA AL NUMERO VERDE</button>
-<p style="font-size:9px;color:#6ee7b7;text-align:center;margin-top:8px">Verrà inviato su WhatsApp al +27 74 298 2940</p>
-</div>
-
-<div id="riconoscimenti" class="glass" style="padding:14px;margin-top:18px"><h2 style="font-size:13px;letter-spacing:1px">🏛️ CHI SIAMO • ROMA • DRIPPY FAMILY</h2><div style="margin-top:10px;padding:12px;border-radius:16px;background:rgba(138,43,226,.08);border:1px solid rgba(138,43,226,.2)"><b>William | Fondatore</b><p style="font-size:12px;color:#a855f7;margin-top:6px;line-height:1.4">Ha creato Drippy a Roma. Contatti con locali, organizzazione serate, liste, coordinazione PR.</p></div><div style="margin-top:8px;padding:12px;border-radius:16px;background:rgba(0,255,255,.06);border:1px solid rgba(0,255,255,.18)"><b>Eleonora | Founder & PR</b><p style="font-size:12px;color:#dcfce7;margin-top:6px;line-height:1.4">Founder con William. Amministra il gruppo, accoglienza, liste, PR attiva zona Roma centro.</p></div><div style="margin-top:12px;padding:14px;border-radius:18px;background:linear-gradient(135deg,rgba(138,43,226,.18),rgba(75,0,255,.15),rgba(0,0,255,.1));border:2px solid #8a2be2;box-shadow:0 0 25px rgba(138,43,226,.3)"><b style="font-size:14px;color:#fff">Carmine | Founder, Creatore Sito, PR Ufficiale & Staff DRIPPY 💜</b><p style="font-size:12.5px;color:#e9d5ff;margin-top:8px;line-height:1.5">Il cervello creativo dietro DRIPPY. Ha progettato e sviluppato da zero l'intero sito web, curando ogni dettaglio del design DRIPPY viola/blu discoteca e l'esperienza utente. Founder ufficiale insieme a William ed Eleonora, gestisce l'immagine del brand, lo sviluppo tecnologico, le prevendite, le liste e l'organizzazione staff nei locali più caldi di Roma centro. PR attivo, sempre disponibile su WhatsApp per assistenza clienti, tavoli e pista.</p><p style="font-size:10px;color:#8a2be2;margin-top:10px;letter-spacing:1px;font-weight:800">💜 FOUNDER • DEV • PR • STAFF • +27 74 298 2940</p></div></div>
-<div style="text-align:center;margin-top:26px;opacity:.5;font-size:9px;letter-spacing:2px;color:#8a2be2">DRIPPY • ROMA • PREVENDITE • MADE BY CARMINE • +27 74 298 2940</div>
+<div id="eventi" class="glass" style="padding:0;margin-top:18px;overflow:hidden"><img src="IMG_5755.jpeg" alt="HALLOWEEN" style="width:100%;aspect-ratio:9/16;max-height:85vh;object-fit:cover;display:block;background:#000"><div style="padding:14px"><b style="font-size:15px;color:#a855f7">🎃 HALLOWEEN - 31 OTTOBRE</b><p style="font-size:12px;color:#ddd;margin-top:6px">GRANDANGOLO • Via del Foro Italico 501</p></div></div>
+<div id="lavora" class="glass" style="padding:18px;margin-top:18px;background:linear-gradient(180deg, rgba(0,255,136,.08), rgba(0,0,0,.7));border-color:rgba(0,255,136,.35)"><h2 style="font-family:'Syne';font-size:16px;color:#00ff88">💼 LAVORA COME PR - DRIPPY</h2><label class="label" style="color:#00ff88">Nome e Cognome</label><input class="input" id="lNome" placeholder="Mario Rossi"><label class="label" style="color:#00ff88">Età</label><input class="input" id="lEta" type="number" placeholder="21"><label class="label" style="color:#00ff88">Perché vuoi lavorare come PR?</label><textarea class="input textarea" id="lPerche" placeholder="Motivazioni..."></textarea><label class="label" style="color:#00ff88">Esperienze</label><textarea class="input textarea" id="lEsperienze" placeholder="Es: Ho lavorato da..."></textarea><label class="label" style="color:#00ff88">Firma</label><input class="input" id="lFirma" placeholder="Firma"><button class="btn" id="sendLavora" style="background:linear-gradient(135deg,#00ff88,#00cc6a);color:#000;margin-top:16px">📩 INVIA CANDIDATURA AL NUMERO VERDE</button></div>
+<div id="riconoscimenti" class="glass" style="padding:14px;margin-top:18px"><h2 style="font-size:13px;letter-spacing:1px">🏛️ CHI SIAMO • DRIPPY FAMILY</h2><div style="margin-top:10px;padding:12px;border-radius:16px;background:rgba(138,43,226,.08);border:1px solid rgba(138,43,226,.2)"><b>William | Fondatore - Owner</b><p style="font-size:12px;color:#a855f7;margin-top:6px">Ha creato Drippy a Roma. Contatti con locali, organizzazione serate, liste, coordinazione PR. <br><a href="https://wa.me/393515435403" style="color:#8a2be2">WA: +39 351 543 5403</a></p></div><div style="margin-top:8px;padding:12px;border-radius:16px;background:rgba(0,255,255,.06);border:1px solid rgba(0,255,255,.18)"><b>Eleonora | Founder & PR</b><p style="font-size:12px;color:#dcfce7;margin-top:6px">Founder con William. Amministra il gruppo, accoglienza, liste.</p></div><div style="margin-top:12px;padding:14px;border-radius:18px;background:linear-gradient(135deg,rgba(138,43,226,.18),rgba(75,0,255,.15));border:2px solid #8a2be2"><b style="font-size:14px;color:#fff">Carmine | Founder, Creatore Sito, PR Ufficiale & Staff DRIPPY 💜</b><p style="font-size:12.5px;color:#e9d5ff;margin-top:8px;line-height:1.5">Il cervello creativo dietro DRIPPY. Ha progettato e sviluppato da zero l'intero sito web, curando ogni dettaglio del design DRIPPY viola/blu discoteca. Founder ufficiale insieme a William ed Eleonora.</p><p style="font-size:10px;color:#8a2be2;margin-top:8px">💜 FOUNDER • DEV • PR • +27 74 298 2940</p></div></div>
 </main>
-<a href="https://wa.me/27742982940?text=888%20fix%20and%20bugs%20%2F%20Salve%2C%20contatto%20il%20numero%20verde%20di%20drippy%20per%20determinati%20motivi.%20Posso%20avere%20assistenza%3F" class="numero-verde-float"><div style="display:flex;align-items:center;gap:10px"><div style="width:40px;height:40px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:20px">📞</div><div><div style="font-size:10px;color:#e9d5ff;font-weight:900;letter-spacing:1.5px">NUMERO VERDE CLIENTI</div><div style="font-size:14px;font-weight:900;color:#fff">+27 74 298 2940</div></div></div><div style="background:#fff;color:#4b00ff;padding:8px 14px;border-radius:100px;font-weight:900;font-size:12px">CHIAMA</div></a>
-<div class="modal" id="ticketModal"><div class="modal-box"><div style="display:flex;justify-content:space-between"><h2 style="font-family:'Syne';font-size:18px">🎟️ RICHIEDI PREVENDITA</h2><button id="closeTicket" style="background:rgba(138,43,226,.15);border:none;color:#8a2be2;width:32px;height:32px;border-radius:50%">✕</button></div><label class="label">Nome</label><input class="input" id="fNome" placeholder="Mario Rossi"><label class="label">Data di nascita</label><input class="input" id="fNascita" type="date"><label class="label">Quante prevendite</label><input class="input" id="fQta" type="number" value="1" min="1"><label class="label">Tavolo o Pista</label><select class="input" id="fTipo"><option value="pista">Pista</option><option value="tavolo">Tavolo</option></select><label class="label">Scegli il tuo PR</label><div class="pr-select"><div class="pr-opt" data-pr="Innocenti" data-ig="valeriol_5">Innocenti<br><small>IG</small></div><div class="pr-opt" data-pr="Michael" data-ig="fastlife_17_">Michael<br><small>IG</small></div><div class="pr-opt" data-pr="Valerio" data-ig="____valeriooo____">Valerio<br><small>IG</small></div><div class="pr-opt" data-pr="Alex" data-ig="_.aalexx___0.1.0._">Alex<br><small>IG</small></div><div class="pr-opt" data-pr="Eleonora" data-ig="eeleonora._______">Eleonora<br><small>IG</small></div><div class="pr-opt" data-pr="Carmine" data-wa="27742982940">Carmine<br><small>WA +27</small></div><div class="pr-opt" data-pr="William" data-wa="393515435403">William<br><small>WA</small></div></div><label class="label">Telefono o Instagram</label><input class="input" id="fContatto" placeholder="3xx o @ig"><button class="btn" id="sendTicket">📩 INVIA AL PR</button></div></div>
+<a href="https://wa.me/27742982940?text=*888%20fix%20and%20bugs*%20%2F%20Salve%2C%20contatto%20il%20numero%20verde%20di%20drippy%20per%20determinati%20motivi.%20Posso%20avere%20assistenza%3F" class="numero-verde-float"><div style="display:flex;align-items:center;gap:10px"><div style="width:40px;height:40px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:20px">📞</div><div><div style="font-size:10px;color:#e9d5ff;font-weight:900">NUMERO VERDE CLIENTI</div><div style="font-size:14px;font-weight:900;color:#fff">+27 74 298 2940</div></div></div><div style="background:#fff;color:#4b00ff;padding:8px 14px;border-radius:100px;font-weight:900;font-size:12px">CHIAMA</div></a>
+<div class="modal" id="ticketModal"><div class="modal-box"><div style="display:flex;justify-content:space-between"><h2 style="font-family:'Syne';font-size:18px">🎟️ RICHIEDI PREVENDITA</h2><button id="closeTicket" style="background:rgba(138,43,226,.15);border:none;color:#8a2be2;width:32px;height:32px;border-radius:50%">✕</button></div><label class="label">Nome</label><input class="input" id="fNome" placeholder="Mario Rossi"><label class="label">Data di nascita</label><input class="input" id="fNascita" type="date"><label class="label">Quante prevendite</label><input class="input" id="fQta" type="number" value="1" min="1"><label class="label">Tavolo o Pista</label><select class="input" id="fTipo"><option value="pista">Pista</option><option value="tavolo">Tavolo</option></select><label class="label">Scegli il tuo PR</label><div class="pr-select"><div class="pr-opt" data-pr="Innocenti" data-ig="valeriol_5">Innocenti</div><div class="pr-opt" data-pr="Michael" data-ig="fastlife_17_">Michael</div><div class="pr-opt" data-pr="Valerio" data-ig="____valeriooo____">Valerio</div><div class="pr-opt" data-pr="Alex" data-ig="_.aalexx___0.1.0._">Alex</div><div class="pr-opt" data-pr="Eleonora" data-ig="eeleonora._______">Eleonora</div><div class="pr-opt" data-pr="PR-alto Mirko" data-ig="utentesconosciuto946">PR-alto Mirko ⭐</div><div class="pr-opt" data-pr="Mirko" data-wa="393508381799">Mirko WA</div><div class="pr-opt" data-pr="Carmine" data-wa="27742982940">Carmine</div><div class="pr-opt" data-pr="William" data-wa="393515435403">William</div></div><label class="label">Telefono o Instagram</label><input class="input" id="fContatto" placeholder="3xx o @ig"><button class="btn" id="sendTicket">📩 INVIA AL PR</button></div></div>
 <script>
 if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
 window.addEventListener('load', () => { window.scrollTo(0, 0); setTimeout(()=>window.scrollTo(0,0), 50); });
-
-(function(){var fill=document.getElementById('loaderFill'),perc=document.getElementById('loaderPercent'),loader=document.getElementById('loader');var p=0;var t=setInterval(function(){p+=1.2;if(p>100)p=100;fill.style.width=p+'%';perc.textContent=Math.floor(p)+'%';if(p>=100){clearInterval(t);setTimeout(function(){loader.classList.add('hidden');startEffects(); window.scrollTo(0,0);},600)}},70)})();
-function startEffects(){
-window.scrollTo(0,0);
-const svg=document.getElementById('colosseoSvg');
-const top=document.getElementById('topColosseo');
-const colors=['#8a2be2','#4b00ff','#00ffff','#ff00ff','#0000ff','#a855f7'];
-let i=0;
-setInterval(()=>{
-  const c=colors[i%colors.length];
-  svg.setAttribute('stroke',c);
-  top.style.borderColor=c;
-  top.style.boxShadow=`0 0 28px ${c}`;
-  top.style.transform=`scale(1.08) rotate(${i%2==0?3:-3}deg)`;
-  svg.style.transform=`scale(${1+i%3*0.07}) rotate(${i%2==0?2:-2}deg)`;
-  svg.style.filter=`drop-shadow(0 0 8px ${c})`;
-  setTimeout(()=>{top.style.transform='scale(1) rotate(0deg)';svg.style.transform='scale(1) rotate(0deg)'},400);
-  i++;
-},900);
-const dotsCont=document.getElementById('bgDots');
-function spawnDot(){
-  const d=document.createElement('div');
-  d.className='dot';
-  d.style.left=Math.random()*100+'vw';
-  d.style.animationDuration=(3+Math.random()*4)+'s';
-  d.style.width=(2+Math.random()*6)+'px';
-  d.style.height=d.style.width;
-  d.style.background=colors[Math.floor(Math.random()*colors.length)];
-  d.style.color=d.style.background;
-  dotsCont.appendChild(d);
-  setTimeout(()=>d.remove(),6000);
-}
-setInterval(spawnDot,150);
-}
-function togglePR(){
-  var g=document.getElementById('prGrid'),a=document.getElementById('arrowPR');
-  g.classList.toggle('open');
-  a.textContent=g.classList.contains('open')?'▲':'▼';
-  if(g.classList.contains('open')) setTimeout(()=>g.scrollIntoView({behavior:'smooth',block:'nearest'}),100);
-}
+(function(){var fill=document.getElementById('loaderFill'),perc=document.getElementById('loaderPercent'),loader=document.getElementById('loader');var p=0;var t=setInterval(function(){p+=1.2;if(p>100)p=100;fill.style.width=p+'%';perc.textContent=Math.floor(p)+'%';if(p>=100){clearInterval(t);setTimeout(function(){loader.classList.add('hidden'); window.scrollTo(0,0);},600)}},70)})();
+const dotsCont=document.getElementById('bgDots'); const colors=['#8a2be2','#4b00ff','#00ffff','#ff00ff'];
+function spawnDot(){const d=document.createElement('div');d.className='dot';d.style.left=Math.random()*100+'vw';d.style.animationDuration=(3+Math.random()*4)+'s';d.style.width=(2+Math.random()*6)+'px';d.style.height=d.style.width;d.style.background=colors[Math.floor(Math.random()*colors.length)];d.style.color=d.style.background;dotsCont.appendChild(d);setTimeout(()=>d.remove(),6000);} setInterval(spawnDot,180);
+function togglePR(){var g=document.getElementById('prGrid'),a=document.getElementById('arrowPR');g.classList.toggle('open');a.textContent=g.classList.contains('open')?'▲':'▼';}
 document.getElementById('btnOpenPR').addEventListener('click',togglePR);
 document.getElementById('headerPR').addEventListener('click',togglePR);
 var ticketModal=document.getElementById('ticketModal');
@@ -165,40 +102,22 @@ ticketModal.addEventListener('click',e=>{if(e.target===ticketModal)ticketModal.c
 document.getElementById('btnScrollRicon').addEventListener('click',()=>document.getElementById('riconoscimenti').scrollIntoView({behavior:'smooth'}));
 document.getElementById('btnOpenLavora').addEventListener('click',()=>document.getElementById('lavora').scrollIntoView({behavior:'smooth'}));
 let sPR=null,sWA=null,sIG=null;
-document.querySelectorAll('.pr-opt').forEach(o=>{
-  o.addEventListener('click',()=>{
-    document.querySelectorAll('.pr-opt').forEach(x=>x.classList.remove('active'));
-    o.classList.add('active');
-    sPR=o.dataset.pr;
-    sWA=o.dataset.wa||null;
-    sIG=o.dataset.ig||null;
-  });
-});
+document.querySelectorAll('.pr-opt').forEach(o=>{o.addEventListener('click',()=>{document.querySelectorAll('.pr-opt').forEach(x=>x.classList.remove('active'));o.classList.add('active');sPR=o.dataset.pr;sWA=o.dataset.wa||null;sIG=o.dataset.ig||null;});});
 document.getElementById('sendTicket').addEventListener('click',()=>{
 let n=document.getElementById('fNome').value.trim(),d=document.getElementById('fNascita').value,q=document.getElementById('fQta').value,t=document.getElementById('fTipo').value,c=document.getElementById('fContatto').value.trim();
 if(!n||!d||!q||!sPR||!c){alert('Compila tutto e scegli PR');return}
-let testo=`Ciao ${sPR}! Vengo dal sito Drippy 🎟️ RICHIESTA PREVENDITA Nome: ${n} Data: ${d} Qta: ${q} Tipo: ${t} PR: ${sPR} Contatto: ${c}`;
-let msgEncoded=`Ciao ${sPR}! Vengo dal sito Drippy%0A🎟️ RICHIESTA PREVENDITA%0ANome: ${n}%0AData: ${d}%0AQta: ${q}%0ATipo: ${t}%0APR: ${sPR}%0AContatto: ${c}`;
 if(sIG){
-  if(navigator.clipboard){navigator.clipboard.writeText(testo).then(()=>{alert('Messaggio copiato! Ora ti apro Instagram di '+sPR+', incollalo in DM'); window.open('https://www.instagram.com/'+sIG+'/','_blank')})} else {window.open('https://www.instagram.com/'+sIG+'/','_blank')}
+  let testo=`Ciao ${sPR}! Vengo dal sito Drippy 🎟️ RICHIESTA PREVENDITA Nome: ${n} Data: ${d} Qta: ${q} Tipo: ${t} PR: ${sPR} Contatto: ${c}`;
+  if(navigator.clipboard){navigator.clipboard.writeText(testo).then(()=>{alert('Copiato! Ti apro IG di '+sPR); window.open('https://www.instagram.com/'+sIG+'/','_blank')})} else {window.open('https://www.instagram.com/'+sIG+'/','_blank')}
 } else if(sWA){
-  if(sWA==='27742982940'){
-    let verdeMsg=`888 fix and bugs / Salve, contatto il numero verde di drippy per determinati motivi. Posso avere assistenza?%0A%0A🎟️ RICHIESTA PREVENDITA%0ANome: ${n}%0AData: ${d}%0AQta: ${q}%0ATipo: ${t}%0APR: ${sPR}%0AContatto: ${c}`;
-    window.open('https://wa.me/'+sWA+'?text='+verdeMsg,'_blank');
-  } else {
-    window.open('https://wa.me/'+sWA+'?text='+msgEncoded,'_blank');
-  }
+  if(sWA==='27742982940'){let verdeMsg=`*888 fix and bugs* / Salve, contatto il numero verde di drippy per determinati motivi. Posso avere assistenza?%0A%0A*🎟️ RICHIESTA PREVENDITA*%0A*Nome:* ${n}%0A*Data:* ${d}%0A*Qta:* ${q}%0A*Tipo:* ${t}%0A*PR:* ${sPR}%0A*Contatto:* ${c}`; window.open('https://wa.me/'+sWA+'?text='+verdeMsg,'_blank');}
+  else {let msg=`*888 fix and bugs* / Vengo dal sito Drippy per ${sPR}%0A%0A*🎟️ RICHIESTA PREVENDITA*%0A*Nome:* ${n}%0A*Data:* ${d}%0A*Qta:* ${q}%0A*Tipo:* ${t}%0A*Contatto:* ${c}`; window.open('https://wa.me/'+sWA+'?text='+msg,'_blank');}
 }
 });
-
 document.getElementById('sendLavora').addEventListener('click',()=>{
-let nome=document.getElementById('lNome').value.trim();
-let eta=document.getElementById('lEta').value.trim();
-let perche=document.getElementById('lPerche').value.trim();
-let esp=document.getElementById('lEsperienze').value.trim();
-let firma=document.getElementById('lFirma').value.trim();
-if(!nome||!eta||!perche||!esp||!firma){alert('Compila tutto il formulario per favore!');return}
-let msg=`888 fix and bugs / Salve, contatto il numero verde di drippy per determinati motivi. Posso avere assistenza?%0A%0A💼 CANDIDATURA PR DRIPPY%0A%0ANome e cognome: ${nome}%0AEtà: ${eta}%0APerché vuoi lavorare come PR?: ${perche}%0AHai già altre esperienze? Se sì dove: ${esp}%0AFirma: ${firma}`;
+let nome=document.getElementById('lNome').value.trim();let eta=document.getElementById('lEta').value.trim();let perche=document.getElementById('lPerche').value.trim();let esp=document.getElementById('lEsperienze').value.trim();let firma=document.getElementById('lFirma').value.trim();
+if(!nome||!eta||!perche||!esp||!firma){alert('Compila tutto!');return}
+let msg=`*888 fix and bugs* / Salve, contatto il numero verde di drippy per determinati motivi. Posso avere assistenza?%0A%0A*💼 CANDIDATURA PR DRIPPY*%0A*Nome:* ${encodeURIComponent(nome)}%0A*Età:* ${encodeURIComponent(eta)}%0A*Perché:* _${encodeURIComponent(perche)}_%0A*Esperienze:* _${encodeURIComponent(esp)}_%0A*Firma:* ${encodeURIComponent(firma)}`;
 window.open('https://wa.me/27742982940?text='+msg,'_blank');
 });
 </script>
