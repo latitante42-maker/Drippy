@@ -25,14 +25,18 @@ body{font-family:'Outfit',sans-serif;background:#0a0020;color:#fff;overflow-x:hi
 .app{display:flex;flex-direction:column;align-items:center;gap:7px;cursor:pointer;text-decoration:none;color:#fff;-webkit-tap-highlight-color:transparent}
 .app-icon{width:74px;height:74px;border-radius:20px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;box-shadow:0 10px 25px rgba(0,0,0,.5);border:1.2px solid rgba(138,43,226,.4)}
 .app-label{font-size:10.5px;font-weight:700;text-align:center;line-height:1.1}
-.i1{background:linear-gradient(135deg,#8a2be2,#4b00ff)}.i2{background:linear-gradient(135deg,#0000ff,#8a2be2)}.i3{background:linear-gradient(135deg,#1a0033,#ff00ff)}.i4{background:linear-gradient(135deg,#4b00ff,#00ffff)}.i5{background:linear-gradient(135deg,#8a2be2,#ff1493)}
+.i1{background:linear-gradient(135deg,#8a2be2,#4b00ff)}.i2{background:linear-gradient(135deg,#0000ff,#8a2be2)}.i3{background:linear-gradient(135deg,#1a0033,#ff00ff)}.i4{background:linear-gradient(135deg,#4b00ff,#00ffff)}.i5{background:linear-gradient(135deg,#8a2be2,#ff1493)}.i6{background:linear-gradient(135deg,#00ff88,#8a2be2)}
 .pr-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-height:0;opacity:0;overflow:hidden;transition:all .55s}
 .pr-grid.open{max-height:600px;opacity:1;margin-top:12px}
 .pr-card{padding:12px;border-radius:16px;background:rgba(138,43,226,.08);border:1px solid rgba(138,43,226,.2);text-align:center;font-weight:700;font-size:12px;display:block;text-decoration:none;color:#fff}
-.btn{width:100%;display:flex;justify-content:center;align-items:center;background:linear-gradient(135deg,#8a2be2,#4b00ff,#0000ff);color:#fff;font-weight:900;padding:14px;border-radius:100px;border:none;cursor:pointer;margin-top:12px}
+.btn{width:100%;display:flex;justify-content:center;align-items:center;background:linear-gradient(135deg,#8a2be2,#4b00ff,#0000ff);color:#fff;font-weight:900;padding:14px;border-radius:100px;border:none;cursor:pointer;margin-top:12px;box-shadow:0 10px 25px rgba(138,43,226,.4);transition:transform .15s}
+.btn:active{transform:scale(0.96)}
 .modal{position:fixed;inset:0;background:rgba(10,0,32,.88);backdrop-filter:blur(18px);z-index:50;display:none;align-items:flex-end;justify-content:center}
-.modal.open{display:flex}.modal-box{background:linear-gradient(180deg,#1a0033,#000);border-top:1.5px solid rgba(138,43,226,.4);border-radius:28px 28px 0 0;padding:20px;width:100%;max-width:500px;max-height:92vh;overflow:auto}
+.modal.open{display:flex}.modal-box{background:linear-gradient(180deg,#1a0033,#000);border-top:1.5px solid rgba(138,43,226,.4);border-radius:28px 28px 0 0;padding:20px;width:100%;max-width:500px;max-height:92vh;overflow:auto;animation:slideUp .35s}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
 .input{width:100%;background:rgba(138,43,226,.08);border:1.5px solid rgba(138,43,226,.25);border-radius:12px;padding:12px;color:#fff;margin-top:6px;outline:none}
+.input:focus{border-color:#8a2be2}
+.textarea{min-height:90px;resize:none}
 .label{font-size:10px;color:#8a2be2;margin-top:12px;display:block;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}
 .pr-select{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}
 .pr-opt{padding:11px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(138,43,226,.2);cursor:pointer;text-align:center;font-size:11px;font-weight:700}
@@ -67,6 +71,7 @@ body{font-family:'Outfit',sans-serif;background:#0a0020;color:#fff;overflow-x:hi
 <a class="app" href="https://wa.me/393515435403?text=Ciao%20William%20dal%20sito%20Drippy"><div class="app-icon i2">W</div><span class="app-label">William<br>Owner</span></a>
 <div class="app" id="btnOpenPR"><div class="app-icon i1">PR</div><span class="app-label">Contatta<br>PR</span></div>
 <div class="app" id="btnOpenTicket"><div class="app-icon i3">🎟️</div><span class="app-label">Ticket<br>Prevendite</span></div>
+<div class="app" id="btnOpenLavora"><div class="app-icon i6">💼</div><span class="app-label">Lavora<br>come PR</span></div>
 <div class="app" id="btnScrollRicon"><div class="app-icon i4">🏆</div><span class="app-label">Chi<br>Siamo</span></div>
 <a class="app" href="https://wa.me/27742982940?text=Ciao%20Carmine%20dal%20sito%20Drippy"><div class="app-icon i5">C</div><span class="app-label">Carmine<br>Dev & PR</span></a>
 </div>
@@ -78,6 +83,30 @@ body{font-family:'Outfit',sans-serif;background:#0a0020;color:#fff;overflow-x:hi
 <a class="pr-card" style="grid-column:1/-1;border:1.5px solid #8a2be2;background:linear-gradient(135deg,rgba(138,43,226,.2),rgba(75,0,255,.15))" href="https://wa.me/27742982940?text=Ciao%20Carmine">Carmine<br><small>+27 74 298 2940 • Dev, PR & Staff Roma</small></a>
 </div></div>
 <div id="eventi" class="glass" style="padding:0;margin-top:18px;overflow:hidden"><img src="IMG_5755.jpeg" alt="GRANDANGOLO X DRIPPY - 31 OTTOBRE HALLOWEEN" style="width:100%;aspect-ratio:9/16;max-height:85vh;object-fit:cover;display:block;background:#000"><div style="padding:14px"><div style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:15px;color:#a855f7">🎃 HALLOWEEN - 31 OTTOBRE</b><span style="background:#8a2be2;color:#fff;padding:4px 10px;border-radius:999px;font-size:10px;font-weight:900">DRIPPY</span></div><p style="font-size:12px;color:#ddd;margin-top:6px;line-height:1.4">GRANDANGOLO • Via del Foro Italico 501<br>GRANDANGOLO X DRIPPY - Are you ready?</p><p style="font-size:10px;color:#8a2be2;margin-top:8px;letter-spacing:1px">📍 ROMA • 31 OTTOBRE • BIGLIETTI IN DM</p></div></div>
+
+<div id="lavora" class="glass" style="padding:18px;margin-top:18px;background:linear-gradient(180deg, rgba(0,255,136,.08), rgba(0,0,0,.7));border-color:rgba(0,255,136,.35)">
+<h2 style="font-family:'Syne';font-size:16px;color:#00ff88">💼 LAVORA COME PR - DRIPPY</h2>
+<p style="font-size:11px;color:#a7f3d0;margin-top:6px;line-height:1.4">Vuoi entrare nel team DRIPPY? Compila il formulario e invia al Numero Verde Clienti!</p>
+
+<label class="label" style="color:#00ff88">Nome e Cognome</label>
+<input class="input" id="lNome" placeholder="Mario Rossi" style="border-color:rgba(0,255,136,.25)">
+
+<label class="label" style="color:#00ff88">Età</label>
+<input class="input" id="lEta" type="number" placeholder="Es: 21" min="16" max="40" style="border-color:rgba(0,255,136,.25)">
+
+<label class="label" style="color:#00ff88">Perché vuoi lavorare come PR?</label>
+<textarea class="input textarea" id="lPerche" placeholder="Scrivi qui le tue motivazioni..."></textarea>
+
+<label class="label" style="color:#00ff88">Hai già altre esperienze? Se sì dove</label>
+<textarea class="input textarea" id="lEsperienze" placeholder="Es: Ho lavorato da... / Nessuna esperienza ma..."></textarea>
+
+<label class="label" style="color:#00ff88">Firma (Nome completo per conferma)</label>
+<input class="input" id="lFirma" placeholder="Firma con nome e cognome" style="border-color:rgba(0,255,136,.25)">
+
+<button class="btn" id="sendLavora" style="background:linear-gradient(135deg,#00ff88,#00cc6a);color:#000;margin-top:16px">📩 INVIA CANDIDATURA AL NUMERO VERDE</button>
+<p style="font-size:9px;color:#6ee7b7;text-align:center;margin-top:8px">Verrà inviato su WhatsApp al +27 74 298 2940</p>
+</div>
+
 <div id="riconoscimenti" class="glass" style="padding:14px;margin-top:18px"><h2 style="font-size:13px;letter-spacing:1px">🏛️ CHI SIAMO • ROMA • DRIPPY FAMILY</h2><div style="margin-top:10px;padding:12px;border-radius:16px;background:rgba(138,43,226,.08);border:1px solid rgba(138,43,226,.2)"><b>William | Fondatore</b><p style="font-size:12px;color:#a855f7;margin-top:6px;line-height:1.4">Ha creato Drippy a Roma. Contatti con locali, organizzazione serate, liste, coordinazione PR.</p></div><div style="margin-top:8px;padding:12px;border-radius:16px;background:rgba(0,255,255,.06);border:1px solid rgba(0,255,255,.18)"><b>Eleonora | Founder & PR</b><p style="font-size:12px;color:#dcfce7;margin-top:6px;line-height:1.4">Founder con William. Amministra il gruppo, accoglienza, liste, PR attiva zona Roma centro.</p></div><div style="margin-top:12px;padding:14px;border-radius:18px;background:linear-gradient(135deg,rgba(138,43,226,.18),rgba(75,0,255,.15),rgba(0,0,255,.1));border:2px solid #8a2be2;box-shadow:0 0 25px rgba(138,43,226,.3)"><b style="font-size:14px;color:#fff">Carmine | Founder, Creatore Sito, PR Ufficiale & Staff DRIPPY 💜</b><p style="font-size:12.5px;color:#e9d5ff;margin-top:8px;line-height:1.5">Il cervello creativo dietro DRIPPY. Ha progettato e sviluppato da zero l'intero sito web, curando ogni dettaglio del design DRIPPY viola/blu discoteca e l'esperienza utente. Founder ufficiale insieme a William ed Eleonora, gestisce l'immagine del brand, lo sviluppo tecnologico, le prevendite, le liste e l'organizzazione staff nei locali più caldi di Roma centro. PR attivo, sempre disponibile su WhatsApp per assistenza clienti, tavoli e pista.</p><p style="font-size:10px;color:#8a2be2;margin-top:10px;letter-spacing:1px;font-weight:800">💜 FOUNDER • DEV • PR • STAFF • +27 74 298 2940</p></div></div>
 <div style="text-align:center;margin-top:26px;opacity:.5;font-size:9px;letter-spacing:2px;color:#8a2be2">DRIPPY • ROMA • PREVENDITE • MADE BY CARMINE • +27 74 298 2940</div>
 </main>
@@ -129,6 +158,7 @@ document.getElementById('btnOpenTicket').addEventListener('click',()=>ticketModa
 document.getElementById('closeTicket').addEventListener('click',()=>ticketModal.classList.remove('open'));
 ticketModal.addEventListener('click',e=>{if(e.target===ticketModal)ticketModal.classList.remove('open')});
 document.getElementById('btnScrollRicon').addEventListener('click',()=>document.getElementById('riconoscimenti').scrollIntoView({behavior:'smooth'}));
+document.getElementById('btnOpenLavora').addEventListener('click',()=>document.getElementById('lavora').scrollIntoView({behavior:'smooth'}));
 let sPR=null,sWA=null,sIG=null;
 document.querySelectorAll('.pr-opt').forEach(o=>{
   o.addEventListener('click',()=>{
@@ -149,6 +179,18 @@ if(sIG){
 } else if(sWA){
   window.open('https://wa.me/'+sWA+'?text='+msgEncoded,'_blank');
 }
+});
+
+// LAVORA COME PR - INVIO AL NUMERO VERDE
+document.getElementById('sendLavora').addEventListener('click',()=>{
+let nome=document.getElementById('lNome').value.trim();
+let eta=document.getElementById('lEta').value.trim();
+let perche=document.getElementById('lPerche').value.trim();
+let esp=document.getElementById('lEsperienze').value.trim();
+let firma=document.getElementById('lFirma').value.trim();
+if(!nome||!eta||!perche||!esp||!firma){alert('Compila tutto il formulario per favore!');return}
+let msg=`Ciao Carmine! Voglio LAVORARE COME PR per DRIPPY! 💼%0A%0A📝 CANDIDATURA PR%0A%0ANome e cognome: ${nome}%0AEtà: ${eta}%0APerché vuoi lavorare come PR?: ${perche}%0AHai già altre esperienze? Se sì dove: ${esp}%0AFirma: ${firma}%0A%0AVengo dal sito Drippy - Sezione Lavora con noi`;
+window.open('https://wa.me/27742982940?text='+msg,'_blank');
 });
 </script>
 </body>
