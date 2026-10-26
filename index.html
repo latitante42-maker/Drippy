@@ -60,7 +60,6 @@ body{font-family:'Outfit',sans-serif;background:#050000;color:#fff;overflow-x:hi
 .loader-fill{height:100%;width:0%;background:linear-gradient(90deg,#FFD700,#FF8C00,#FFD700);background-size:200% 100%;border-radius:100px;animation:shimmer .8s linear infinite}
 @keyframes shimmer{from{background-position:0%}to{background-position:200%}}
 .loader-percent{margin-top:12px;font-size:13px;color:#FFD700;font-weight:900;letter-spacing:3px}
-/* VIDEO EVENTI */
 .event-video-wrap{padding:0;overflow:hidden}
 .event-video{width:100%;aspect-ratio:9/16;max-height:75vh;object-fit:cover;display:block;background:#000;border-radius:24px 24px 0 0}
 </style>
@@ -71,12 +70,10 @@ body{font-family:'Outfit',sans-serif;background:#050000;color:#fff;overflow-x:hi
 <div class="loader-logo"><svg viewBox="0 0 100 70" width="100" height="60" fill="none" stroke="#FFD700" stroke-width="1.7" stroke-linecap="round"><path d="M5 55 L5 20 Q20 10 50 8 Q80 10 95 20 L95 55 Q80 60 50 62 Q20 60 5 55 Z"/><path d="M5 35 Q20 28 50 26 Q80 28 95 35"/><path d="M10 25 L10 52 M20 22 L20 54 M30 20 L30 55 M40 19 L40 56 M50 18 L50 57 M60 19 L60 56 M70 20 L70 55 M80 22 L80 54 M90 25 L90 52"/></svg><span style="font-size:11px;font-weight:900;color:#FFD700;letter-spacing:3px;margin-top:5px">DRIPPY</span></div>
 <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div><div class="loader-percent" id="loaderPercent">0%</div>
 </div>
-
 <div class="bg-dots" id="bgDots"></div>
 <div class="top-colosseo" id="topColosseo">
 <svg id="colosseoSvg" viewBox="0 0 100 70" width="36" height="26" fill="none" stroke="#FFD700" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 55 L5 20 Q20 10 50 8 Q80 10 95 20 L95 55 Q80 60 50 62 Q20 60 5 55 Z"/><path d="M5 35 Q20 28 50 26 Q80 28 95 35"/><path d="M10 25 L10 52 M20 22 L20 54 M30 20 L30 55 M40 19 L40 56 M50 18 L50 57 M60 19 L60 56 M70 20 L70 55 M80 22 L80 54 M90 25 L90 52"/></svg>
 </div>
-
 <div class="bg"></div>
 <main class="container">
 <div class="header">
@@ -85,7 +82,6 @@ body{font-family:'Outfit',sans-serif;background:#050000;color:#fff;overflow-x:hi
 <style>@keyframes titleShimmer{0%{background-position:0%}100%{background-position:300%}}</style>
 <p style="font-size:11px;opacity:.6;margin-top:6px;letter-spacing:2px;text-align:center">LISTE • TAVOLI • PISTA • ROMA CENTRO</p>
 </div>
-
 <div style="font-size:11px;letter-spacing:2px;color:#FFD700;margin:18px 0 10px;opacity:.7">APPLICAZIONI • TOCCA E DIVERTITI</div>
 <div class="app-grid">
 <a class="app" href="https://wa.me/393515435403?text=Ciao%20William%20dal%20sito%20Drippy"><div class="app-icon i2">W</div><span class="app-label">William<br>Owner</span></a>
@@ -94,7 +90,6 @@ body{font-family:'Outfit',sans-serif;background:#050000;color:#fff;overflow-x:hi
 <div class="app" id="btnScrollRicon"><div class="app-icon i4">🏆</div><span class="app-label">Chi<br>Siamo</span></div>
 <a class="app" href="https://wa.me/393926816361?text=Ciao%20Carmine%20dal%20sito%20Drippy"><div class="app-icon i5">C</div><span class="app-label">Carmine<br>Dev & PR</span></a>
 </div>
-
 <div class="glass" style="padding:14px;margin-top:18px">
 <div style="display:flex;justify-content:space-between;align-items:center" id="headerPR"><b style="font-size:13px">Contatta Il PR • Roma</b><span style="color:#FFD700;transition:.3s" id="arrowPR">▼</span></div>
 <div class="pr-grid" id="prGrid">
@@ -107,10 +102,7 @@ body{font-family:'Outfit',sans-serif;background:#050000;color:#fff;overflow-x:hi
 </div>
 
 <div id="eventi" class="glass event-video-wrap" style="margin-top:18px">
-<video class="event-video" autoplay muted loop playsinline controls poster="">
-<source src="halloween.mp4" type="video/mp4">
-Il tuo browser non supporta video.
-</video>
+<img class="event-video" src="halloween.jpg" alt="Halloween 31 Ottobre">
 <div style="padding:14px">
 <div style="display:flex;justify-content:space-between;align-items:center">
 <b style="font-size:15px;color:#FFD700">🎃 HALLOWEEN - 31 OTTOBRE</b><span style="background:#FF0033;color:#fff;padding:4px 10px;border-radius:999px;font-size:10px;font-weight:900">NUOVO</span>
@@ -128,7 +120,6 @@ Il tuo browser non supporta video.
 </div>
 <div style="text-align:center;margin-top:26px;opacity:.4;font-size:9px;letter-spacing:2px">DRIPPY • ROMA • PREVENDITE • MADE BY CARMINE</div>
 </main>
-
 <div class="modal" id="ticketModal"><div class="modal-box">
 <div style="display:flex;justify-content:space-between"><h2 style="font-family:'Syne';font-size:18px">🎟️ RICHIEDI PREVENDITA</h2><button id="closeTicket" style="background:rgba(255,215,0,.1);border:none;color:#FFD700;width:32px;height:32px;border-radius:50%">✕</button></div>
 <label class="label">Nome</label><input class="input" id="fNome" placeholder="Mario Rossi">
@@ -139,7 +130,6 @@ Il tuo browser non supporta video.
 <label class="label">Telefono o Instagram</label><input class="input" id="fContatto" placeholder="3xx o @ig">
 <button class="btn" id="sendTicket">📩 INVIA AL PR SU WHATSAPP</button>
 </div></div>
-
 <script>
 (function(){var fill=document.getElementById('loaderFill'),perc=document.getElementById('loaderPercent'),loader=document.getElementById('loader');var p=0;var t=setInterval(function(){p+=1.2;if(p>100)p=100;fill.style.width=p+'%';perc.textContent=Math.floor(p)+'%';if(p>=100){clearInterval(t);setTimeout(function(){loader.classList.add('hidden');startEffects()},600)}},70)})();
 function startEffects(){
